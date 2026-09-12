@@ -1,0 +1,103 @@
+.portfolio-container {
+  min-height: 100vh;
+  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Base Card Styling */
+.bento-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 1.25rem;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* DESKTOP LAYOUT (3 Columns) */
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1.1fr;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.card-profile { grid-column: 1; grid-row: 1; }
+.card-experience { grid-column: 1; grid-row: 2; }
+
+.middle-top-row {
+  grid-column: 2;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.card-center-featured { grid-column: 2; grid-row: 2; min-height: 300px; }
+.socials-bar { grid-column: 3; grid-row: 1; }
+.projects-card { grid-column: 3; grid-row: 2; }
+.pixel-banner { grid-column: 1 / span 3; grid-row: 3; min-height: 140px; }
+
+
+/* MOBILE & TABLET LAYOUT (Matches wireframe) */
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr auto; /* Main content left, fixed-width socials right */
+    gap: 0.85rem;
+  }
+
+  /* Row 1: Profile + Vertical Socials side-by-side */
+  .card-profile {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .socials-bar {
+    grid-column: 2;
+    grid-row: 1;
+    width: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  /* Row 2: Tech Stack + Design Gallery (2 columns across) */
+  .middle-top-row {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+  }
+
+  /* Row 3: Experience timeline (Left) + Center Feature/Extra Boxes (Right) */
+  .card-experience {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .card-center-featured {
+    grid-column: 2;
+    grid-row: 3;
+    min-height: 280px;
+  }
+
+  /* Row 4: Projects (Full Width) */
+  .projects-card {
+    grid-column: 1 / span 2;
+    grid-row: 4;
+  }
+
+  /* Row 5: Bottom Pixel Banner (Full Width) */
+  .pixel-banner {
+    grid-column: 1 / span 2;
+    grid-row: 5;
+    min-height: 120px;
+  }
+}
