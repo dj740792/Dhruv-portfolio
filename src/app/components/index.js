@@ -4,14 +4,16 @@ import Gallery from "./Gallery";
 import ProfileCard from "./ProfileCard";
 import ProjectsCard from "./ProjectsCard";
 import SkillsBox from "./SkillsBox";
-import SocialsBar from "./SocialsBar";
+import HobbiesBox from "./HobbiesBox";
+import MailBox from "./MailBox";
 
 export {
   BottomBanner,
   ProfileCard,
   ProjectsCard,
   SkillsBox,
-  SocialsBar,
+  MailBox,
+  HobbiesBox,
   ExperienceBox,
   Gallery,
 };

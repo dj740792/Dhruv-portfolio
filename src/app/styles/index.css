@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+html,
+body {
+    @apply min-h-full w-full m-0 overflow-x-hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+@layer components {
+    .portfolio-container {
+        @apply min-h-screen max-w-360 mx-auto box-border py-12;
+    }
+
+    .bento-grid {
+        @apply grid min-h-[calc(100vh-6rem)] w-full gap-4;
+        grid-template-columns: 1fr 1.4fr 1.4fr;
+        grid-template-rows: minmax(0, 1fr) minmax(0, .8fr) minmax(0, .8fr) minmax(0, .9fr);
+    }
+
+    .bento-card {
+        @apply flex min-w-0 min-h-0 flex-col justify-between overflow-hidden rounded-2xl border border-gray-500 bg-white p-6 text-black shadow-sm box-border;
+    }
+
+    .card-profile {
+        @apply col-start-1 row-start-1 row-span-3;
+    }
+
+    .middle-column {
+        @apply col-start-2 row-start-1 row-span-3 grid min-w-0 gap-4;
+        grid-template-rows: 1.4fr 1fr 1fr;
+    }
+
+    .middle-row,
+    .bottom-row {
+        @apply grid min-h-0 grid-cols-2 gap-4;
+    }
+
+    .bottom-row {
+        grid-template-columns: 1.7fr 1fr;
+    }
+
+    .projects-card {
+        @apply col-start-3 row-start-1 row-span-3;
+    }
+
+    .pixel-banner {
+        @apply col-span-full row-start-4;
+    }
+}
+
+@media (max-width: 900px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: 330px 220px 220px 190px;
+    }
+
+    .card-profile {
+        @apply row-span-2;
+    }
+
+    .middle-column {
+        @apply row-span-2;
+    }
+
+    .projects-card {
+        @apply col-span-2 col-start-1 row-start-3 row-span-1;
+    }
+
+    .pixel-banner {
+        @apply col-span-2 col-start-1 row-start-4;
+    }
+}
+
+@media (max-width: 600px) {
+    .portfolio-container {
+        @apply p-3;
+    }
+
+    .bento-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        min-height: auto;
+    }
+
+    .card-profile {
+        min-height: 400px;
+    }
+
+    .projects-card,
+    .pixel-banner {
+        min-height: 160px;
+    }
+
+    .card-experience {
+        min-height: 140px;
+    }
+
+    .middle-column {
+        min-height: 160px;
+    }
+
+    .middle-row,
+    .bottom-row {
+        min-height: 170px;
+        gap: 12px;
+    }
+}
