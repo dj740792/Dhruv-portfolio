@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -16,9 +16,36 @@ const GitHubCalendar = dynamic(
 
 export default function ProfileCard() {
   const [activeImage, setActiveImage] = useState(null);
+  const calendarWrapperRef = useRef(null);
 
   const coverSrc = "/cover.png";
   const avatarSrc = "/profile.jpg";
+
+  useEffect(() => {
+    const wrapper = calendarWrapperRef.current;
+    if (!wrapper) return undefined;
+
+    let attempts = 0;
+    const scrollToRecentMonths = () => {
+      const scrollContainer = wrapper.querySelector(
+        ".react-activity-calendar__scroll-container",
+      );
+
+      if (scrollContainer) {
+        scrollContainer.scrollLeft = scrollContainer.scrollWidth;
+      }
+
+      attempts += 1;
+      if (attempts >= 20) {
+        window.clearInterval(intervalId);
+      }
+    };
+
+    const intervalId = window.setInterval(scrollToRecentMonths, 100);
+    scrollToRecentMonths();
+
+    return () => window.clearInterval(intervalId);
+  }, []);
 
   return (
     <>
@@ -38,7 +65,7 @@ export default function ProfileCard() {
         >
           <Image src={avatarSrc} alt="Dhruv Jha" fill className="profile-img" />
         </div>
-        <div className="col-center gap-5">
+        <div className="space-y-10">
           <div className="profile-heading">
             <div>
               <h1>Dhruv Jha</h1>
@@ -55,20 +82,25 @@ export default function ProfileCard() {
               interactions, and solid code that brings ideas to life.
             </p>
           </div>
-          <div className="max-w-full overflow-x-auto">
+
+          <div
+            ref={calendarWrapperRef}
+            className="calendar-wrapper no-scrollbar"
+          >
             <GitHubCalendar
               username="dj740792"
-              blockSize={12}
-              blockMargin={2}
-              fontSize={12}
-              hideColorLegend={false}
-              hideTotalCount={false}
+              blockSize={10}
+              blockMargin={4}
+              fontSize={10}
               transformData={(data) =>
                 data.filter((day) => {
                   const date = new Date(day.date);
                   return date.getMonth() >= 5;
                 })
               }
+              labels={{
+                totalCount: "{{count}} contributions since June",
+              }}
               theme={{
                 light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
                 dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
@@ -106,7 +138,6 @@ export default function ProfileCard() {
         </div>
       </div>
 
-      {/* Lightbox Modal */}
       {activeImage && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-pointer"
