@@ -2,7 +2,22 @@
 
 html,
 body {
-    @apply min-h-full w-full m-0 overflow-x-hidden;
+    @apply min-h-full w-full m-0 overflow-x-hidden font-mono;
+}
+
+body {
+    font-family: var(--font-neue-montreal);
+    font-weight: var(--font-neue-montreal-regular);
+    font-synthesis: none;
+}
+
+
+@utility col-center {
+    @apply flex flex-col justify-center items-center
+}
+
+@utility flex-center {
+    @apply flex justify-center items-center
 }
 
 body::-webkit-scrollbar {
@@ -11,25 +26,25 @@ body::-webkit-scrollbar {
 
 @layer components {
     .portfolio-container {
-        @apply min-h-screen max-w-360 mx-auto box-border py-12;
+        @apply min-h-screen max-w-390 mx-auto box-border py-6;
     }
 
     .bento-grid {
-        @apply grid min-h-[calc(100vh-6rem)] w-full gap-4;
+        @apply grid min-h-[calc(100vh-3rem)] w-full gap-4;
         grid-template-columns: 1fr 1.4fr 1.4fr;
-        grid-template-rows: minmax(0, 1fr) minmax(0, .8fr) minmax(0, .8fr) minmax(0, .9fr);
+        grid-template-rows: minmax(0, 1fr) minmax(0, .8fr) minmax(0, .8fr) minmax(0, .9fr), 
     }
 
     .bento-card {
-        @apply flex min-w-0 min-h-0 flex-col justify-between overflow-hidden rounded-2xl border border-gray-500 bg-white p-6 text-black shadow-sm box-border;
+        @apply flex flex-col justify-between overflow-hidden rounded-2xl bg-white text-black inset-shadow-sm inset-shadow-purple-300/70 box-border;
     }
 
     .card-profile {
-        @apply col-start-1 row-start-1 row-span-3;
+        @apply col-start-1 row-start-1 row-span-4;
     }
 
     .middle-column {
-        @apply col-start-2 row-start-1 row-span-3 grid min-w-0 gap-4;
+        @apply col-start-2 row-start-1 row-span-4 grid min-w-0 gap-4;
         grid-template-rows: 1.4fr 1fr 1fr;
     }
 
@@ -43,11 +58,11 @@ body::-webkit-scrollbar {
     }
 
     .projects-card {
-        @apply col-start-3 row-start-1 row-span-3;
+        @apply col-start-3 row-start-1 row-span-4;
     }
 
     .pixel-banner {
-        @apply col-span-full row-start-4;
+        @apply col-span-full row-start-5;
     }
 }
 
@@ -70,7 +85,7 @@ body::-webkit-scrollbar {
     }
 
     .pixel-banner {
-        @apply col-span-2 col-start-1 row-start-4;
+        @apply col-span-full row-span-4;
     }
 }
 
@@ -108,4 +123,64 @@ body::-webkit-scrollbar {
         min-height: 170px;
         gap: 12px;
     }
+}
+
+@layer components {
+
+    /* Profile Card Container Layout */
+    .profile-content {
+        @apply flex flex-col justify-between h-full w-full relative p-4;
+    }
+
+    /* Cover Banner */
+    .profile-cover {
+        @apply relative w-full h-40 rounded-xl bg-neutral-100;
+    }
+
+    .cover-img {
+        @apply object-cover rounded-xl
+    }
+
+    /* Avatar Positioning */
+    .avatar {
+        @apply relative -mt-18 ml-3 z-10 h-35 w-35 rounded-full border-2 border-white shadow-sm overflow-hidden flex items-center justify-center;
+    }
+
+    .profile-img {
+        @apply rounded-full object-cover;
+    }
+
+    /* Header Section */
+    .profile-heading {
+        @apply flex items-start justify-between w-full mt-3 px-1;
+    }
+
+    .profile-heading h1 {
+        @apply text-4xl font-bold text-gray-900 leading-tight tracking-tight  ;
+    }
+
+    .profile-heading p {
+        @apply text-[16px] text-gray-500 font-medium mt-0.5;
+    }
+
+
+    /* Intro Section */
+    .profile-intro {
+        @apply mt-4 px-1 space-y-1.5;
+    }
+
+    .profile-intro h2 {
+        @apply text-xl font-semibold text-gray-800 tracking-tight;
+    }
+
+    .profile-intro p {
+        @apply text-[16px] text-gray-600 leading-snug;
+    }
+
+    /* Social Links Footer */
+    .social-links {
+        @apply flex items-center gap-5 mt-auto pt-4 border-t border-gray-100 w-full px-1 text-base text-gray-500 flex-center;
+    }
+
+
 }

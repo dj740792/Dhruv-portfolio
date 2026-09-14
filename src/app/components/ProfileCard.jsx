@@ -1,70 +1,130 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import dynamic from "next/dynamic";
+import { FaXTwitter, FaLinkedin, FaGithub } from "react-icons/fa6";
+
+const GitHubCalendar = dynamic(
+  () =>
+    import("react-github-calendar").then(
+      ({ GitHubCalendar: Calendar }) => Calendar,
+    ),
+  { ssr: false },
+);
+
 export default function ProfileCard() {
-  return <div />;
-  /*
-    <div className="profile-content">
-      <div className="profile-cover" aria-hidden="true">
-        <div className="cover-lines" />
-      </div>
-      <div className="avatar" aria-label="Dhruv Jha portrait" role="img">
-        DJ
-      </div>
-      <div className="profile-heading">
-        <div>
-          <h1>Dhruv Jha</h1>
-          <p>Creative Web Developer</p>
+  const [activeImage, setActiveImage] = useState(null);
+
+  const coverSrc = "/cover.png";
+  const avatarSrc = "/profile.jpg";
+
+  return (
+    <>
+      <div className="profile-content">
+        <div
+          className="profile-cover cursor-pointer"
+          aria-label="portfolio cover photo"
+          onClick={() => setActiveImage(coverSrc)}
+        >
+          <Image src={coverSrc} fill alt="cover photo" className="cover-img" />
         </div>
-        <span className="availability">Now, 20s</span>
-      </div>
-      <div className="profile-intro">
-        <h2>What I can do for you?</h2>
-        <p>
-          I design products that feel effortless to use and enjoyable to
-          interact with. From the first wireframe to the final line of code, I
-          enjoy shaping digital experiences where thoughtful design and
-          engineering work as one.
-        </p>
-      </div>
-      <div
-        className="contribution-chart"
-        aria-label="Contribution activity chart"
-      >
-        <div className="chart-months">
-          <span>Sep</span>
-          <span>Oct</span>
-          <span>Nov</span>
-          <span>Dec</span>
-          <span>Jan</span>
-          <span>Feb</span>
-          <span>Mar</span>
-          <span>Apr</span>
-          <span>May</span>
-          <span>Jun</span>
-          <span>Jul</span>
-          <span>Aug</span>
+
+        <div
+          className="avatar cursor-pointer"
+          aria-label="Dhruv Jha portrait"
+          onClick={() => setActiveImage(avatarSrc)}
+        >
+          <Image src={avatarSrc} alt="Dhruv Jha" fill className="profile-img" />
         </div>
-        <div className="chart-grid">
-          {Array.from({ length: 72 }, (_, index) => (
-            <i key={index} className={`level-${(index * 7 + 3) % 5}`} />
-          ))}
+        <div className="col-center gap-5">
+          <div className="profile-heading">
+            <div>
+              <h1>Dhruv Jha</h1>
+              <p>21, New Delhi</p>
+              <p>Creative Web Developer</p>
+            </div>
+          </div>
+
+          <div className="profile-intro">
+            <h2>What I do?</h2>
+            <p>
+              Turning visual concepts into smooth, production-grade web
+              applications. I focus on clean interfaces, thoughtful user
+              interactions, and solid code that brings ideas to life.
+            </p>
+          </div>
+          <div className="max-w-full overflow-x-auto">
+            <GitHubCalendar
+              username="dj740792"
+              blockSize={12}
+              blockMargin={2}
+              fontSize={12}
+              hideColorLegend={false}
+              hideTotalCount={false}
+              transformData={(data) =>
+                data.filter((day) => {
+                  const date = new Date(day.date);
+                  return date.getMonth() >= 5;
+                })
+              }
+              theme={{
+                light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
+                dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
+              }}
+              colorScheme="light"
+            />
+          </div>
         </div>
-        <small>
-          Less <b /> More
-        </small>
+
+        <div className="social-links" aria-label="Social links">
+          <Link
+            href="https://x.com/dhrxvui"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X"
+          >
+            <FaXTwitter />
+          </Link>
+          <Link
+            href="https://github.com/dj740792"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <FaGithub />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/dhruv-jha-7a1a4441b/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin />
+          </Link>
+        </div>
       </div>
-      <div className="social-links" aria-label="Social links">
-        <a href="#instagram" aria-label="Instagram">
-          ◎
-        </a>
-        <a href="#x" aria-label="X">
-          𝕏
-        </a>
-        <a href="#github" aria-label="GitHub">
-          ◉
-        </a>
-        <a href="#linkedin" aria-label="LinkedIn">
-          in
-        </a>
-      </div>
-    </div>
-  );*/
+
+      {/* Lightbox Modal */}
+      {activeImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-pointer"
+          onClick={() => setActiveImage(null)}
+        >
+          <div
+            className="relative h-[80vh] w-full max-w-3xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <Image
+              src={activeImage}
+              alt="Enlarged view"
+              fill
+              className="object-contain"
+            />
+          </div>
+        </div>
+      )}
+    </>
+  );
 }
