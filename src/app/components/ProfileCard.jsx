@@ -65,7 +65,7 @@ export default function ProfileCard() {
         >
           <Image src={avatarSrc} alt="Dhruv Jha" fill className="profile-img" />
         </div>
-        <div className="space-y-10">
+        <div className="space-y-8">
           <div className="profile-heading">
             <div>
               <h1>Dhruv Jha</h1>
@@ -77,7 +77,7 @@ export default function ProfileCard() {
           <div className="profile-intro">
             <h2>What I do?</h2>
             <p>
-              Turning visual concepts into smooth, production-grade web
+              I Turn visual concepts into smooth, production-grade web
               applications. I focus on clean interfaces, thoughtful user
               interactions, and solid code that brings ideas to life.
             </p>
@@ -132,6 +132,7 @@ export default function ProfileCard() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
+            
           >
             <FaLinkedin />
           </Link>
