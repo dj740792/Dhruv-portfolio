@@ -11,7 +11,7 @@ body {
     font-synthesis: none;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
     display: none;
 }
 
@@ -37,7 +37,7 @@ body::-webkit-scrollbar{
     }
 
     .bento-card {
-        @apply flex flex-col justify-between overflow-hidden rounded-2xl bg-white text-black inset-shadow-sm inset-shadow-purple-300/70 box-border;
+        @apply flex flex-col justify-between overflow-hidden rounded-2xl bg-white text-black box-border;
     }
 
     .card-profile {

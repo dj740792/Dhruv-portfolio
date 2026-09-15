@@ -23,7 +23,7 @@ export default function Home() {
           </div>
 
           <div className="middle-row">
-            <div className="bento-card bg-blue-400">
+            <div className="bento-card">
               <SkillsBox />
             </div>
             <div className="bento-card bg-amber-300">
