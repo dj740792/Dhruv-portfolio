@@ -26,7 +26,7 @@ export default function Home() {
             <div className="bento-card">
               <SkillsBox />
             </div>
-            <div className="bento-card bg-amber-300">
+            <div className="bento-card ">
               <Gallery />
             </div>
           </div>

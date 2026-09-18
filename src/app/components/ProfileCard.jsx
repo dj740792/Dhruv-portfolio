@@ -55,7 +55,14 @@ export default function ProfileCard() {
           aria-label="portfolio cover photo"
           onClick={() => setActiveImage(coverSrc)}
         >
-          <Image src={coverSrc} fill alt="cover photo" className="cover-img" />
+          <Image
+            src={coverSrc}
+            fill
+            alt="cover photo"
+            className="cover-img"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            loading="eager"
+          />
         </div>
 
         <div
@@ -63,7 +70,13 @@ export default function ProfileCard() {
           aria-label="Dhruv Jha portrait"
           onClick={() => setActiveImage(avatarSrc)}
         >
-          <Image src={avatarSrc} alt="Dhruv Jha" fill className="profile-img" />
+          <Image
+            src={avatarSrc}
+            alt="Dhruv Jha"
+            fill
+            className="profile-img"
+            sizes="(max-width: 768px) 120px, 140px"
+          />
         </div>
         <div className="space-y-8">
           <div className="profile-heading">
@@ -132,7 +145,6 @@ export default function ProfileCard() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            
           >
             <FaLinkedin />
           </Link>
@@ -153,6 +165,7 @@ export default function ProfileCard() {
               alt="Enlarged view"
               fill
               className="object-contain"
+              sizes="(max-width: 768px) 100vw, 768px"
             />
           </div>
         </div>

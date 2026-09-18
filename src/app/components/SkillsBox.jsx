@@ -155,8 +155,6 @@ export default function SkillsBox() {
 
     Matter.Composite.add(engine.world, mouseConstraint);
     render.mouse = mouse;
-
-    // Prevent default touch/focus selection blue boxes on canvas
     render.canvas.style.outline = "none";
     render.canvas.style.webkitUserSelect = "none";
     render.canvas.style.userSelect = "none";
@@ -174,8 +172,8 @@ export default function SkillsBox() {
   }, [imagesLoaded]);
 
   return (
-    <div className="relative w-full h-full min-h-45 bg-white rounded-3xl border border-neutral-200/80 shadow-md overflow-hidden p-4 flex flex-col justify-between">
-      <h2 className="text-sm font-medium text-neutral-500 z-10 pointer-events-none select-none">
+    <div className=" relative w-full h-full min-h-45  overflow-hidden p-4 flex flex-col justify-between">
+      <h2 className="text-sm font-medium text-neutral-600 z-10 pointer-events-none select-none">
         Tech Stack
       </h2>
 

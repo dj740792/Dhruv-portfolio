@@ -8,4 +8,5 @@ export const TECH_STACK = [
   { name: "Vercel", icon: "./skillsIcons/vercel-icon.png", radius: 20 },
   { name: "Motion", icon: "./skillsIcons/motion-icon.png", radius: 20 },
   { name: "Html", icon: "./skillsIcons/html-icon.png", radius: 20 },
+  { name: "Github", icon: "./skillsIcons/github-icon.jpeg", radius: 20 },
 ];
