@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import gsap from "gsap";
+import Link from "next/link";
 
 export default function DesignGalleryCard() {
   const cardRef = useRef(null);
@@ -11,33 +12,32 @@ export default function DesignGalleryCard() {
   const textRef = useRef(null);
 
   const handleMouseEnter = () => {
-    // 1. Background transition to purple gradient
     gsap.to(bgRef.current, {
       opacity: 1,
       duration: 0.4,
       ease: "power2.out",
     });
 
-    // 2. Text turns white
     gsap.to(textRef.current, {
+      scale: 1.8,
       color: "#ffffff",
-      duration: 0.3,
+      duration: 0.4,
+      fontWeight: 700,
+      ease: "power2.out",
     });
 
-    // 3. Left design preview slides up and straightens slightly
     gsap.to(leftPreviewRef.current, {
-      y: -12,
-      rotate: -4,
-      scale: 1.05,
+      y: -3,
+      rotate: -12,
+      scale: 1.09,
       duration: 0.4,
       ease: "back.out(1.7)",
     });
 
-    // 4. Right design preview slides up and overlaps
     gsap.to(rightPreviewRef.current, {
-      y: -18,
-      rotate: 6,
-      scale: 1.05,
+      y: -4,
+      rotate: 12,
+      scale: 1.09,
       duration: 0.4,
       delay: 0.05,
       ease: "back.out(1.7)",
@@ -45,20 +45,20 @@ export default function DesignGalleryCard() {
   };
 
   const handleMouseLeave = () => {
-    // Reset background
     gsap.to(bgRef.current, {
       opacity: 0,
       duration: 0.4,
       ease: "power2.inOut",
     });
 
-    // Reset text color
     gsap.to(textRef.current, {
-      color: "#6b7280", // neutral-500
-      duration: 0.3,
+      scale: 1,
+      fontWeight: 500,
+      color: "#6b7280",
+      duration: 0.4,
+      ease: "power2.inOut",
     });
 
-    // Reset cards to default rest positions
     gsap.to([leftPreviewRef.current, rightPreviewRef.current], {
       y: 0,
       scale: 1,
@@ -71,21 +71,21 @@ export default function DesignGalleryCard() {
   };
 
   return (
-    <div
+    <Link
+      href="/GalleryPage"
       ref={cardRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className="relative w-full h-full min-h-45  overflow-hidden p-4 flex flex-col justify-between"
     >
-   
       <div
         ref={bgRef}
-        className="absolute inset-0 bg-linear-to-br from-indigo-400 via-purple-300 to-indigo-300 opacity-0 transition-none pointer-events-none"
+        className="absolute inset-0 bg-linear-to-br from-[#a09cf4]  to-[#3528e7] opacity-0 transition-none pointer-events-none"
       />
 
       <h2
         ref={textRef}
-        className="text-sm font-medium text-neutral-500 z-10 pointer-events-none leading-tight"
+        className="text-sm uppercase text-neutral-500 z-10 pointer-events-none leading-4  origin-top-left"
       >
         Design
         <br />
@@ -97,27 +97,27 @@ export default function DesignGalleryCard() {
         {/* Left Card  */}
         <div
           ref={leftPreviewRef}
-          className="absolute -bottom-14 left-2 w-28 h-36 bg-neutral-100   overflow-hidden -rotate-8 transform-gpu origin-bottom-left"
+          className="absolute -bottom-14 left-2 w-28 h-32 bg-neutral-100   overflow-hidden -rotate-8 transform-gpu origin-bottom-left"
         >
           <img
-            src="/intro.jpg" 
-            alt="Oasis Design"
-            className="w-full h-full object-cover"
+            src="/intro.jpg"
+            alt="about jpg"
+            className="w-full border border-neutral-200 h-full object-cover"
           />
         </div>
 
         {/* Right Card*/}
         <div
           ref={rightPreviewRef}
-          className="absolute -bottom-14 right-1 w-28 h-36 overflow-hidden rotate-8 transform-gpu origin-bottom-right"
+          className="absolute -bottom-14 right-1 w-28 h-32 overflow-hidden rotate-8 transform-gpu origin-bottom-right"
         >
           <img
             src="/cta.png"
-            alt="Arch Design"
-            className="w-full h-full object-cover"
+            alt="cta png"
+            className="w-full h-full object-cover border border-neutral-200"
           />
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
