@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import gsap from "gsap";
 
-export default function Gallery() {
+export default function DesignGalleryCard() {
   const cardRef = useRef(null);
   const leftPreviewRef = useRef(null);
   const rightPreviewRef = useRef(null);
@@ -75,15 +75,14 @@ export default function Gallery() {
       ref={cardRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full h-full min-h-[180px]  shadow-sm overflow-hidden p-4 flex flex-col justify-between cursor-pointer select-none group"
+      className="relative w-full h-full min-h-45  overflow-hidden p-4 flex flex-col justify-between"
     >
-      {/* Purple Gradient Overlay */}
+   
       <div
         ref={bgRef}
-        className="absolute inset-0 bg-gradient-to-br from-indigo-400 via-purple-400 to-indigo-500 opacity-0 transition-none pointer-events-none"
+        className="absolute inset-0 bg-linear-to-br from-indigo-400 via-purple-300 to-indigo-300 opacity-0 transition-none pointer-events-none"
       />
 
-      {/* Card Header */}
       <h2
         ref={textRef}
         className="text-sm font-medium text-neutral-500 z-10 pointer-events-none leading-tight"
@@ -93,27 +92,27 @@ export default function Gallery() {
         Gallery
       </h2>
 
-      {/* Floating Design Cards Preview Container */}
+      {/* Floating Cards  */}
       <div className="relative w-full h-24 flex justify-center items-end z-10 pointer-events-none">
-        {/* Left Card ("OASIS") */}
+        {/* Left Card  */}
         <div
           ref={leftPreviewRef}
-          className="absolute -bottom-2 left-2 w-28 h-36 bg-neutral-100 rounded-xl shadow-md border border-white/40 overflow-hidden -rotate-8 transform-gpu origin-bottom-left"
+          className="absolute -bottom-14 left-2 w-28 h-36 bg-neutral-100   overflow-hidden -rotate-8 transform-gpu origin-bottom-left"
         >
           <img
-            src="/gallery/oasis-preview.jpg" // replace with your asset path
+            src="/intro.jpg" 
             alt="Oasis Design"
             className="w-full h-full object-cover"
           />
         </div>
 
-        {/* Right Card ("ARCH") */}
+        {/* Right Card*/}
         <div
           ref={rightPreviewRef}
-          className="absolute -bottom-4 right-1 w-28 h-36 bg-neutral-100 rounded-xl shadow-md border border-white/40 overflow-hidden rotate-8 transform-gpu origin-bottom-right"
+          className="absolute -bottom-14 right-1 w-28 h-36 overflow-hidden rotate-8 transform-gpu origin-bottom-right"
         >
           <img
-            src="/gallery/arch-preview.jpg" // replace with your asset path
+            src="/cta.png"
             alt="Arch Design"
             className="w-full h-full object-cover"
           />
