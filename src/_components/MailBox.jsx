@@ -13,7 +13,7 @@ export default function MailBox() {
     gsap.to(mailIconRef.current, {
       scale: 1.4,
       rotate: -8,
-   y:12,
+   y:0,
       duration: 0.5,
       ease: "back.out(1.8)",
     });
@@ -54,11 +54,7 @@ export default function MailBox() {
         className="relative w-20 h-20 object-contain"
       />
 
-      <div ref={textRef} className="relative text-center mt-3">
-        <p className="text-md font-medium text-neutral-700">
-          Wanna Contact Me?
-        </p>
-      </div>
+      
     </Link>
   );
 }

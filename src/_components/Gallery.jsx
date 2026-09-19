@@ -76,11 +76,11 @@ export default function DesignGalleryCard() {
       ref={cardRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full h-full min-h-45  overflow-hidden p-4 flex flex-col justify-between"
+      className="relative w-full h-full min-h-45  overflow-hidden p-4 flex flex-col justify-between "
     >
       <div
         ref={bgRef}
-        className="absolute inset-0 bg-linear-to-br from-[#d5d3f9] via-[#b3aef3] to-[#928afb] opacity-0 transition-none pointer-events-none"
+        className="absolute inset-0 bg-linear-to-br  from-[#d5d3f9] via-[#b3aef3] to-[#928afb] opacity-0 transition-none pointer-events-none "
       />
 
       <h2
