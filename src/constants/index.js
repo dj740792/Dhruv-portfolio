@@ -12,25 +12,31 @@ export const TECH_STACK = [
   { name: "Webflow", icon: "./skillsIcons/webflow-icon.jpeg", radius: 20 },
 ];
 
-export const hobbiesIcons = [
+export const hobbies = [
   {
     name: "Reading",
-    icon: "/hobbiesIcons/1984.jpg",
-    className: "left-[24%] top-[24%] w-12 rotate-[-8deg]",
+    icon: "/hobbiesIcons/1984.jpg",  
+    Href:"https://en.wikipedia.org/wiki/Nineteen_Eighty-Four",
+    className: "left-[24%] top-[24%] w-14 rotate-[-8deg]",
   },
   {
     name: "LetterBoxd",
     icon: "/hobbiesIcons/letterboxd.jpeg",
-    className: "right-[31%] top-[16%] w-14 rounded-full rotate-[12deg]",
+    Href:"https://letterboxd.com/Dhruv740/",
+    className: "right-[31%] top-[14%] w-12 rounded-full rotate-[12deg]",
   },
   {
     name: "Japanese",
     icon: "/hobbiesIcons/kanji.png",
-    className: "left-[18%] bottom-[16%] w-11 rotate-[-5deg]",
+    Href:"",
+    className: "left-[18%] bottom-[16%] w-12 rotate-[-5deg]",
   },
   {
     name: "Design",
     icon: "/hobbiesIcons/designBook.png",
-    className: "right-[16%] bottom-[14%] w-12 rotate-[10deg]",
+    Href:"https://en.wikipedia.org/wiki/The_Design_of_Everyday_Things",
+    className: "right-[16%] bottom-[14%] w-18 rotate-[10deg]",
   },
 ];
+
+export const HobbiesDialogue = "Things I do outside of all these";
