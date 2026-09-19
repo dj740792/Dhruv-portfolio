@@ -72,7 +72,7 @@ export default function DesignGalleryCard() {
 
   return (
     <Link
-      href="/GalleryPage"
+      href="/gallery"
       ref={cardRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -80,12 +80,12 @@ export default function DesignGalleryCard() {
     >
       <div
         ref={bgRef}
-        className="absolute inset-0 bg-linear-to-br from-[#a09cf4]  to-[#3528e7] opacity-0 transition-none pointer-events-none"
+        className="absolute inset-0 bg-linear-to-br from-[#d5d3f9] via-[#b3aef3] to-[#928afb] opacity-0 transition-none pointer-events-none"
       />
 
       <h2
         ref={textRef}
-        className="text-sm uppercase text-neutral-500 z-10 pointer-events-none leading-4  origin-top-left"
+        className="text-sm uppercase text-neutral-600 z-10 pointer-events-none leading-4  origin-top-left"
       >
         Design
         <br />

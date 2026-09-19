@@ -34,7 +34,7 @@ export default function Home() {
             <div className="bento-card bg-purple-400">
               <HobbiesBox />
             </div>
-            <div className="bento-card bg-pink-400">
+            <div className="bento-card">
               <MailBox />
             </div>
           </div>
