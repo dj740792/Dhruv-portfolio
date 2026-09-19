@@ -31,11 +31,11 @@ export default function Home() {
             </div>
           </div>
           <div className="bottom-row">
-            <div className="bento-card bg-purple-400">
-              <HobbiesBox />
+            <div className="bento-card ">
+              <MailBox />
             </div>
             <div className="bento-card">
-              <MailBox />
+              <HobbiesBox />
             </div>
           </div>
         </div>

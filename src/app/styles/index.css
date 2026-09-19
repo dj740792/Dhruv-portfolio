@@ -37,7 +37,7 @@ body::-webkit-scrollbar {
     }
 
     .bento-card {
-        @apply flex flex-col justify-between overflow-hidden rounded-2xl bg-white text-black border border-gray-300/90 box-border ;
+        @apply flex flex-col justify-between overflow-hidden rounded-2xl bg-white text-black border border-gray-300/90 box-border;
     }
 
     .card-profile {
@@ -55,7 +55,7 @@ body::-webkit-scrollbar {
     }
 
     .bottom-row {
-        grid-template-columns: 1.7fr 1fr;
+        grid-template-columns: 1fr 1.7fr;
     }
 
     .projects-card {
@@ -161,13 +161,13 @@ body::-webkit-scrollbar {
     }
 
     .profile-heading p {
-        @apply text-[16px] text-gray-700 font-medium mt-0.5;
+        @apply text-[16px] text-gray-700 font-medium mt-0.5 tracking-tight;
     }
 
 
 
     .profile-intro {
-        @apply mt-4 px-1 space-y-1.5;
+        @apply mt-4 px-1 space-y-1.5 tracking-tight;
     }
 
     .profile-intro h2 {

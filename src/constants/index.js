@@ -11,3 +11,26 @@ export const TECH_STACK = [
   { name: "Github", icon: "./skillsIcons/github-icon.jpeg", radius: 20 },
   { name: "Webflow", icon: "./skillsIcons/webflow-icon.jpeg", radius: 20 },
 ];
+
+export const hobbiesIcons = [
+  {
+    name: "Reading",
+    icon: "/hobbiesIcons/1984.jpg",
+    className: "left-[24%] top-[24%] w-12 rotate-[-8deg]",
+  },
+  {
+    name: "LetterBoxd",
+    icon: "/hobbiesIcons/letterboxd.jpeg",
+    className: "right-[31%] top-[16%] w-14 rounded-full rotate-[12deg]",
+  },
+  {
+    name: "Japanese",
+    icon: "/hobbiesIcons/kanji.png",
+    className: "left-[18%] bottom-[16%] w-11 rotate-[-5deg]",
+  },
+  {
+    name: "Design",
+    icon: "/hobbiesIcons/designBook.png",
+    className: "right-[16%] bottom-[14%] w-12 rotate-[10deg]",
+  },
+];
