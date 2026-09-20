@@ -6,9 +6,16 @@ import Link from "next/link";
 export default function HobbiesBox() {
   const handleIconEnter = (event) => {
     gsap.to(event.currentTarget, {
-      scale: 1.12,
-      duration: 0.3,
-      ease: "back.out(1.7)",
+      keyframes: [
+        { x: -5, duration: 0.09 },
+        { x: 3, duration: 0.09 },
+        { x: -2, duration: 0.09 },
+        { x: 2, duration: 0.09 },
+        { x: 0, duration: 0.09 },
+      ],
+      ease: "power1.inOut",
+      duration: 0.7,
+      scale: 1.09,
     });
   };
 
@@ -17,6 +24,7 @@ export default function HobbiesBox() {
       scale: 1,
       duration: 0.3,
       ease: "power2.inOut",
+      scale: 1,
     });
   };
 
