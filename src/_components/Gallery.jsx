@@ -54,7 +54,7 @@ export default function DesignGalleryCard() {
     gsap.to(textRef.current, {
       scale: 1,
       fontWeight: 500,
-      color: "#6b7280",
+      color: "#404040",
       duration: 0.4,
       ease: "power2.inOut",
     });
@@ -85,7 +85,7 @@ export default function DesignGalleryCard() {
 
       <h2
         ref={textRef}
-        className="text-sm uppercase text-neutral-600 z-10 pointer-events-none leading-4  origin-top-left"
+        className="text-sm uppercase text-neutral-700 z-10 pointer-events-none leading-4  origin-top-left"
       >
         Design
         <br />

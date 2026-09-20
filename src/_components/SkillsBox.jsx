@@ -173,7 +173,7 @@ export default function SkillsBox() {
 
   return (
     <div className=" relative w-full h-full min-h-45  overflow-hidden p-4 flex flex-col justify-between">
-      <h2 className="text-sm uppercase font-medium text-neutral-600 z-10 pointer-events-none select-none">
+      <h2 className="text-sm uppercase font-medium text-neutral-700 z-10 pointer-events-none select-none">
         Tech Stack
       </h2>
 

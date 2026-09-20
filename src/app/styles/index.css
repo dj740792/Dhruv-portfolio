@@ -27,7 +27,7 @@ body::-webkit-scrollbar {
 
 @layer components {
     .portfolio-container {
-        @apply min-h-screen max-w-390 mx-auto box-border py-6;
+        @apply min-h-screen max-w-390 mx-auto box-border py-5 bg-neutral-300/20 border border-neutral-300/60 px-3 rounded-2xl ;
     }
 
     .bento-grid {
@@ -37,7 +37,7 @@ body::-webkit-scrollbar {
     }
 
     .bento-card {
-        @apply flex flex-col justify-between overflow-hidden rounded-2xl bg-white text-black border border-gray-300/90 box-border;
+        @apply flex flex-col justify-between overflow-hidden rounded-2xl bg-white text-black border border-gray-300/90 box-border shadow-lg shadow-gray-700/20;
     }
 
     .card-profile {
