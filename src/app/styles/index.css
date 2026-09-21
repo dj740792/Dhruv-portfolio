@@ -27,7 +27,7 @@ body::-webkit-scrollbar {
 
 @layer components {
     .portfolio-container {
-        @apply min-h-screen max-w-390 mx-auto box-border py-5 bg-neutral-300/20 border border-neutral-300/60 px-3 rounded-2xl ;
+        @apply min-h-screen max-w-390 mx-auto box-border py-5 bg-neutral-300/20 border border-neutral-300/60 px-3 rounded-2xl;
     }
 
     .bento-grid {
@@ -205,6 +205,5 @@ body::-webkit-scrollbar {
     .social-links {
         @apply flex items-center gap-5 mt-auto pt-4 w-full px-1 text-xl text-gray-800 flex-center;
     }
-
 
 }

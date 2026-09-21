@@ -15,28 +15,29 @@ export const TECH_STACK = [
 export const hobbies = [
   {
     name: "Reading",
-    icon: "/hobbiesIcons/1984.jpg",  
-    Href:"https://en.wikipedia.org/wiki/Nineteen_Eighty-Four",
+    icon: "/hobbiesIcons/1984.jpg",
+    Href: "",
     className: "left-[24%] top-[24%] w-14 rotate-[-8deg]",
   },
   {
     name: "LetterBoxd",
     icon: "/hobbiesIcons/letterboxd.jpeg",
-    Href:"https://letterboxd.com/Dhruv740/",
+    Href: "https://letterboxd.com/Dhruv740/",
     className: "right-[31%] top-[14%] w-12 rounded-full rotate-[12deg]",
   },
   {
     name: "Japanese",
     icon: "/hobbiesIcons/kanji.png",
-    Href:"",
+    Href: "",
     className: "left-[18%] bottom-[16%] w-12 rotate-[-5deg]",
   },
   {
     name: "Design",
     icon: "/hobbiesIcons/designBook.png",
-    Href:"https://en.wikipedia.org/wiki/The_Design_of_Everyday_Things",
+    Href: "",
     className: "right-[16%] bottom-[14%] w-18 rotate-[10deg]",
   },
 ];
 
 export const HobbiesDialogue = "Things I do outside of all these";
+
