@@ -5,7 +5,6 @@ import gsap from "gsap";
 import Link from "next/link";
 
 export default function MailBox() {
-  const subTextRef = useRef(null);
   const buttonRef = useRef(null);
   const avatarRef = useRef(null);
   const arrowRef = useRef(null);
