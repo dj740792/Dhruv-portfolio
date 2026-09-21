@@ -82,8 +82,8 @@ export default function ProfileCard() {
           <div className="profile-heading">
             <div>
               <h1>Dhruv Jha</h1>
-              <p>21, New Delhi</p>
-              <p>Creative Web Developer</p>
+              <p className="text-sm">New Delhi</p>
+              <p>Product Designer</p>
             </div>
           </div>
 
