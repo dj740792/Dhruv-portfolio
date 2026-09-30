@@ -39,11 +39,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="projects-card bento-card bg-orange-400">
+        <div className="projects-card bento-card ">
           <ProjectsCard />
         </div>
 
-        <div className="pixel-banner bento-card bg-purple-700">
+        <div className="pixel-banner bento-card">
           <BottomBanner />
         </div>
       </div>

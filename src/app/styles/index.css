@@ -32,7 +32,7 @@ body::-webkit-scrollbar {
 
     .bento-grid {
         @apply grid min-h-[calc(100vh-3rem)] w-full gap-4;
-        grid-template-columns: 1fr 1.4fr 1.4fr;
+        grid-template-columns: 1fr 1.4fr 1fr;
         grid-template-rows: repeat(3, minmax(0, 1fr)) minmax(0, .9fr) minmax(72px, .5fr);
     }
 

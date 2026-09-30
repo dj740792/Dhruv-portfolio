@@ -83,16 +83,16 @@ export default function ProfileCard() {
             <div>
               <h1>Dhruv Jha</h1>
               <p className="text-sm">New Delhi</p>
-              <p>Product Designer</p>
+              <p>Design Engineer</p>
             </div>
           </div>
 
           <div className="profile-intro">
             <h2>What I do?</h2>
             <p>
-              I Turn visual concepts into smooth, production-grade web
-              applications. I focus on clean interfaces, thoughtful user
-              interactions, and solid code that brings ideas to life.
+              I loves building clean, modern websites where design,
+              functionality, and even the smallest details matter. My focus is
+              on making products that are both Scalable and visually satisfying.d
             </p>
           </div>
 
