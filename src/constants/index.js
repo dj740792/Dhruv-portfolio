@@ -38,6 +38,66 @@ export const hobbies = [
     className: "right-[16%] bottom-[14%] w-18 rotate-[10deg]",
   },
 ];
+export const projects = [
+  {
+    title: "OASIS",
+    description: "Interior architecture studio",
+    image: "/Project1.png",
+    tech: [
+      {
+        name: "Next.js",
+        icon: "/skillsIcons/next-icon.jpeg",
+      },
+      {
+        name: "React",
+        icon: "/skillsIcons/react-icon.png",
+      },
+      {
+        name: "tailwind",
+        icon: "/skillsIcons/tailwind-icon.jpeg",
+      },
+      {
+        name: "Motion",
+        icon: "/skillsIcons/motion-icon.png",
+      },
+      {
+        name: "Figma",
+        icon: "/skillsIcons/figma-icon.jpeg",
+      },
+    ],
+    href: "https://oasis-studio-pi.vercel.app/",
+    github: "https://github.com/dj740792/Oasis-website",
+  },
+
+  {
+    title: "MangaHaven",
+    description: "Modern manga reading platform",
+    image: "/Project2.png",
+    tech: [
+      {
+        name: "Next.js",
+        icon: "/skillsIcons/next-icon.jpeg",
+      },
+      {
+        name: "React",
+        icon: "/skillsIcons/react-icon.png",
+      },
+      {
+        name: "tailwind",
+        icon: "/skillsIcons/tailwind-icon.jpeg",
+      },
+      {
+        name: "Gsap",
+        icon: "/skillsIcons/gsap-icon.jpeg",
+      },
+      {
+        name: "Figma",
+        icon: "/skillsIcons/figma-icon.jpeg",
+      },
+    ],
+    href: "/projects/mangahaven",
+    github: "https://github.com/dj740792/Studio-Landing-Page",
+  },
+];
 
 export const HobbiesDialogue = "Things I do outside of all these";
-

@@ -78,7 +78,7 @@ export default function ProfileCard() {
             sizes="(max-width: 768px) 120px, 140px"
           />
         </div>
-        <div className="space-y-8">
+        <div className="space-y-12">
           <div className="profile-heading">
             <div>
               <h1>Dhruv Jha</h1>
@@ -92,7 +92,7 @@ export default function ProfileCard() {
             <p>
               I loves building clean, modern websites where design,
               functionality, and even the smallest details matter. My focus is
-              on making products that are both Scalable and visually satisfying.d
+              on making products that are both Scalable and visually satisfying.
             </p>
           </div>
 

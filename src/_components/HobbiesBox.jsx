@@ -38,7 +38,7 @@ export default function HobbiesBox() {
       </div>
 
       {hobbies.map((item) => (
-        <Link key={item.name} href={item.Href}>
+        <Link key={item.name} href={item.Href} target="_blank">
           <img
             src={item.icon}
             alt={item.name}

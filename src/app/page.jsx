@@ -43,7 +43,7 @@ export default function Home() {
           <ProjectsCard />
         </div>
 
-        <div className="pixel-banner bento-card">
+        <div className="pixel-banner bento-card ">
           <BottomBanner />
         </div>
       </div>
