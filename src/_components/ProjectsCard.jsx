@@ -43,7 +43,7 @@ function ProjectItem({ project }) {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative flex min-h-0 flex-1 flex-col overflow-visible border border-neutral-200 rounded-xl p-2"
+      className="relative flex min-h-0 flex-1 flex-col overflow-visible bento-card p-2"
     >
       <Link
         href={project.href}

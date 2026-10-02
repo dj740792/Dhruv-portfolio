@@ -146,7 +146,7 @@ body::-webkit-scrollbar {
     }
 
     .profile-identity-row {
-        @apply relative z-10 flex items-center justify-between -mt-18 px-1;
+        @apply relative z-10 flex items-center justify-between -mt-22 px-1;
     }
 
     /* Avatar Positioning */
@@ -160,7 +160,7 @@ body::-webkit-scrollbar {
 
     /* Header Section */
     .profile-heading {
-        @apply flex items-start justify-between w-full mt-3 px-1;
+        @apply flex items-start justify-between w-full  px-1;
     }
 
     .profile-heading h1 {
@@ -168,7 +168,7 @@ body::-webkit-scrollbar {
     }
 
     .profile-heading p {
-        @apply text-[16px] text-gray-700 font-medium mt-0.5 tracking-tight;
+        @apply text-[16px] text-gray-700 font-medium  tracking-tight;
     }
 
 

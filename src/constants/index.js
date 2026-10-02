@@ -70,8 +70,8 @@ export const projects = [
   },
 
   {
-    title: "MangaHaven",
-    description: "Modern manga reading platform",
+    title: "Studio Nemo",
+    description: "A landing page for a mockup Photo studio.",
     image: "/Project2.png",
     tech: [
       {
@@ -95,7 +95,7 @@ export const projects = [
         icon: "/skillsIcons/figma-icon.jpeg",
       },
     ],
-    href: "/projects/mangahaven",
+    href: "https://studio-landing-page-ivory.vercel.app/",
     github: "https://github.com/dj740792/Studio-Landing-Page",
   },
 ];
