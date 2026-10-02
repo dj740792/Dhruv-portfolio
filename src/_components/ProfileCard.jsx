@@ -55,6 +55,7 @@ export default function ProfileCard() {
           aria-label="portfolio cover photo"
           onClick={() => setActiveImage(coverSrc)}
         >
+          
           <Image
             src={coverSrc}
             fill
@@ -65,18 +66,47 @@ export default function ProfileCard() {
           />
         </div>
 
-        <div
-          className="avatar cursor-pointer"
-          aria-label="Dhruv Jha portrait"
-          onClick={() => setActiveImage(avatarSrc)}
-        >
-          <Image
-            src={avatarSrc}
-            alt="Dhruv Jha"
-            fill
-            className="profile-img"
-            sizes="(max-width: 768px) 120px, 140px"
-          />
+        <div className="profile-identity-row">
+          <div
+            className="avatar cursor-pointer"
+            aria-label="Dhruv Jha portrait"
+            onClick={() => setActiveImage(avatarSrc)}
+          >
+            <Image
+              src={avatarSrc}
+              alt="Dhruv Jha"
+              fill
+              className="profile-img"
+              sizes="(max-width: 768px) 120px, 140px"
+            />
+          </div>
+
+          <div className="social-links mt-14 lg:mt-9" aria-label="Social links">
+            <Link
+              href="https://x.com/dhrxvui"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X"
+            >
+              <FaXTwitter />
+            </Link>
+            <Link
+              href="https://github.com/dj740792"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/dhruv-jha-7a1a4441b/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin />
+            </Link>
+          </div>
         </div>
         <div className="space-y-12">
           <div className="profile-heading">
@@ -121,33 +151,6 @@ export default function ProfileCard() {
               colorScheme="light"
             />
           </div>
-        </div>
-
-        <div className="social-links" aria-label="Social links">
-          <Link
-            href="https://x.com/dhrxvui"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="X"
-          >
-            <FaXTwitter />
-          </Link>
-          <Link
-            href="https://github.com/dj740792"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
-            <FaGithub />
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/dhruv-jha-7a1a4441b/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedin />
-          </Link>
         </div>
       </div>
 

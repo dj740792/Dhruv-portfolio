@@ -5,45 +5,7 @@ import gsap from "gsap";
 import Link from "next/link";
 import { projects } from "@/constants";
 
-function TechIcon({ tech }) {
-  const labelRef = useRef(null);
 
-  const handleMouseEnter = () => {
-    gsap.to(labelRef.current, {
-      opacity: 1,
-      y: -4,
-      duration: 0.2,
-      ease: "power2.out",
-    });
-  };
-
-  const handleMouseLeave = () => {
-    gsap.to(labelRef.current, {
-      opacity: 0,
-      y: 0,
-      duration: 0.15,
-      ease: "power2.in",
-    });
-  };
-
-  return (
-    <div
-      className="relative flex h-7 w-7 items-center justify-center rounded-md border border-neutral-200 bg-white"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <img src={tech.icon} alt={tech.name} className="h-4 w-4 object-contain" />
-
-      {/* Tech name */}
-      <span
-        ref={labelRef}
-        className="pointer-events-none absolute bottom-full left-1/2 z-30 mb-1 -translate-x-1/2 whitespace-nowrap rounded-md bg-neutral-900 px-2 py-1 text-[9px] font-medium text-white opacity-0"
-      >
-        {tech.name}
-      </span>
-    </div>
-  );
-}
 
 function ProjectItem({ project }) {
   const previewRef = useRef(null);
@@ -81,7 +43,7 @@ function ProjectItem({ project }) {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative flex min-h-0 flex-1 flex-col overflow-visible"
+      className="relative flex min-h-0 flex-1 flex-col overflow-visible border border-neutral-200 rounded-xl p-2"
     >
       <Link
         href={project.href}
@@ -101,7 +63,7 @@ function ProjectItem({ project }) {
               ref={imageRef}
               src={project.image}
               alt={`${project.title} project preview`}
-              className="block h-auto w-full transform-gpu"
+              className="block h-auto w-full transform-gpu "
             />
           </div>
         </div>
@@ -120,11 +82,7 @@ function ProjectItem({ project }) {
 
       {/* TECH STACK */}
       <div className="flex justify-between">
-        <div className="mt-3 flex items-center gap-1.5">
-          {project.tech.map((tech) => (
-            <TechIcon key={tech.name} tech={tech} />
-          ))}
-        </div>
+        
 
         <div className="mt-3 flex items-center gap-1.5 text-[10px] font-medium uppercase text-neutral-700">
           <Link

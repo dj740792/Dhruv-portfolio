@@ -6,9 +6,12 @@ body {
 }
 
 body {
+    position: relative;
+    min-height: 100vh;
     font-family: var(--font-neue-montreal);
     font-weight: var(--font-neue-montreal-regular);
     font-synthesis: none;
+    color: #1b1717;
 }
 
 body::-webkit-scrollbar {
@@ -27,12 +30,12 @@ body::-webkit-scrollbar {
 
 @layer components {
     .portfolio-container {
-        @apply min-h-screen max-w-390 mx-auto box-border py-5 bg-neutral-300/20 border border-neutral-300/60 px-3 rounded-2xl;
+        @apply min-h-screen max-w-390 mx-auto box-border py-5 relative z-10;
     }
 
     .bento-grid {
         @apply grid min-h-[calc(100vh-3rem)] w-full gap-4;
-        grid-template-columns: 0.9fr 1.2fr 0.9fr;
+        grid-template-columns: 0.9fr 1.1fr 0.9fr;
         grid-template-rows: repeat(3, minmax(0, 1fr)) minmax(0, .9fr) minmax(72px, .5fr);
     }
 
@@ -135,16 +138,20 @@ body::-webkit-scrollbar {
 
 
     .profile-cover {
-        @apply relative w-full h-40 rounded-xl bg-neutral-100;
+        @apply relative w-full h-40;
     }
 
     .cover-img {
         @apply object-cover rounded-xl
     }
 
+    .profile-identity-row {
+        @apply relative z-10 flex items-center justify-between -mt-18 px-1;
+    }
+
     /* Avatar Positioning */
     .avatar {
-        @apply relative -mt-18 ml-3 z-10 h-35 w-35 rounded-full border-2 border-white shadow-sm overflow-hidden flex items-center justify-center;
+        @apply relative ml-3 h-35 w-35 rounded-full border-2 border-white shadow-sm overflow-hidden flex items-center justify-center;
     }
 
     .profile-img {
@@ -203,7 +210,8 @@ body::-webkit-scrollbar {
     }
 
     .social-links {
-        @apply flex items-center gap-5 mt-auto pt-4 w-full px-1 text-xl text-gray-800 flex-center;
+        @apply flex items-center gap-5 mr-8 px-1 text-xl text-gray-800;
     }
+
 
 }
