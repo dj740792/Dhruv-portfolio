@@ -77,10 +77,6 @@ export const projects = [
     background:"bg-gradient-to-t from-slate-300 to-slate-50",
     tech: [
       {
-        name: "Next.js",
-        icon: "/skillsIcons/next-icon.jpeg",
-      },
-      {
         name: "React",
         icon: "/skillsIcons/react-icon.png",
       },
@@ -89,8 +85,8 @@ export const projects = [
         icon: "/skillsIcons/tailwind-icon.jpeg",
       },
       {
-        name: "Gsap",
-        icon: "/skillsIcons/gsap-icon.jpeg",
+        name: "Motion",
+        icon: "/skillsIcons/motion-icon.png",
       },
       {
         name: "Figma",
