@@ -111,7 +111,7 @@ export default function HobbiesBox() {
       ref={cardRef}
       onMouseEnter={handleCardEnter}
       onMouseLeave={handleCardLeave}
-      className="relative h-full min-h-45 w-full overflow-hidden"
+      className="relative h-full min-h-45 w-full overflow-hidden cursor-pointer"
     >
       <div
         ref={dialogueRef}
@@ -143,7 +143,7 @@ export default function HobbiesBox() {
             alt={item.name}
             onMouseEnter={handleIconEnter}
             onMouseLeave={handleIconLeave}
-            className={`pointer-events-auto absolute z-10 cursor-pointer object-contain opacity-0 ${item.className}`}
+            className={`pointer-events-auto absolute z-10  object-contain opacity-0 ${item.className}`}
           />
         </Link>
       ))}

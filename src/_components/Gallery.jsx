@@ -80,7 +80,7 @@ export default function DesignGalleryCard() {
     >
       <div
         ref={bgRef}
-        className="absolute inset-0 bg-[#5142f5] opacity-0 transition-none pointer-events-none "
+        className="absolute inset-0 bg-linear-to-t from-blue-700 to-blue-400 opacity-0 transition-none pointer-events-none"
       />
 
       <h2

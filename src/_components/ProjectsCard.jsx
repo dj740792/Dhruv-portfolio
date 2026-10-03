@@ -5,21 +5,18 @@ import gsap from "gsap";
 import Link from "next/link";
 import { projects } from "@/constants";
 
-
-
 function ProjectItem({ project }) {
   const previewRef = useRef(null);
   const imageRef = useRef(null);
 
   const handleMouseEnter = () => {
     gsap.to(previewRef.current, {
-      backgroundColor: "#f97316",
       duration: 0.3,
       ease: "power2.out",
     });
 
     gsap.to(imageRef.current, {
-      y: 0,
+      y: 7,
       duration: 0.3,
       ease: "power2.out",
     });
@@ -27,13 +24,12 @@ function ProjectItem({ project }) {
 
   const handleMouseLeave = () => {
     gsap.to(previewRef.current, {
-      backgroundColor: "#ffffff",
       duration: 0.3,
       ease: "power2.inOut",
     });
 
     gsap.to(imageRef.current, {
-      y: 5,
+      y: 0,
       duration: 0.3,
       ease: "power2.inOut",
     });
@@ -43,10 +39,9 @@ function ProjectItem({ project }) {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative flex min-h-0 flex-1 flex-col overflow-visible bento-card p-2"
+      className="relative flex min-h-0 flex-1 flex-col overflow-visible border rounded-xl border-neutral-200 p-2"
     >
-      <Link
-        href={project.href}
+      <div
         target={project.href.startsWith("http") ? "_blank" : undefined}
         rel={
           project.href.startsWith("http") ? "noopener noreferrer" : undefined
@@ -55,10 +50,10 @@ function ProjectItem({ project }) {
       >
         <div
           ref={previewRef}
-          className="relative min-h-0 flex-1 overflow-hidden rounded-xl border border-neutral-200 p-2"
+          className={`${project.background} relative min-h-0 flex-1 overflow-hidden rounded-xl border border-neutral-200 p-2 `}
         >
           {/* Project screenshot */}
-          <div className="absolute bottom-0 left-1/2 w-[78%] -translate-x-1/2 overflow-hidden">
+          <div className="absolute bottom-0 left-1/2 w-[78%] -translate-x-1/2 overflow-hidden cursor-pointer">
             <img
               ref={imageRef}
               src={project.image}
@@ -70,7 +65,7 @@ function ProjectItem({ project }) {
 
         {/* PROJECT INFO */}
         <div className="px-1 pt-3">
-          <h3 className="text-base font-semibold text-neutral-800">
+          <h3 className="text-xl font-semibold text-neutral-800">
             {project.title}
           </h3>
 
@@ -78,12 +73,9 @@ function ProjectItem({ project }) {
             {project.description}
           </p>
         </div>
-      </Link>
+      </div>
 
-      {/* TECH STACK */}
       <div className="flex justify-between">
-        
-
         <div className="mt-3 flex items-center gap-1.5 text-[10px] font-medium uppercase text-neutral-700">
           <Link
             href={project.github}
@@ -92,6 +84,14 @@ function ProjectItem({ project }) {
             aria-label={`${project.title} source code on GitHub`}
           >
             <img src="/skillsIcons/github-icon.jpeg" className="h-7" alt="" />
+          </Link>
+          <Link
+            href={project.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${project.title} view the project live`}
+          >
+            <img src="/skillsIcons/web-icon.png" className="h-5" alt="" />
           </Link>
         </div>
       </div>

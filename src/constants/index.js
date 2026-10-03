@@ -43,6 +43,7 @@ export const projects = [
     title: "OASIS",
     description: "Interior architecture studio",
     image: "/Project1.png",
+    background:"bg-gradient-to-t from-yellow-500 to-yellow-100",
     tech: [
       {
         name: "Next.js",
@@ -73,6 +74,7 @@ export const projects = [
     title: "Studio Nemo",
     description: "A landing page for a mockup Photo studio.",
     image: "/Project2.png",
+    background:"bg-gradient-to-t from-slate-300 to-slate-50",
     tech: [
       {
         name: "Next.js",
