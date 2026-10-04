@@ -105,44 +105,44 @@ function ProjectItem({ project }) {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="project-item"
+      className="relative flex min-h-72 min-w-0 flex-1 flex-col overflow-visible rounded-xl border border-neutral-200 p-2 md:max-[1099px]:min-h-100 max-md:p-2.5"
     >
-      <div className="relative flex min-h-0 flex-1 flex-col overflow-visible">
+      <div className="relative flex min-h-0 flex-1 flex-col overflow-visible ">
         {/* Project preview */}
         <div
-          className={`${project.background} relative min-h-0 flex-1 overflow-hidden rounded-xl border border-neutral-200 p-2`}
+          className={`${project.background} relative min-h-0 flex-1 overflow-hidden rounded-xl border border-neutral-200 p-2 max-md:h-36 max-md:flex-none max-md:p-1.5`}
         >
-          <div className="absolute bottom-0 left-1/2 w-[78%] -translate-x-1/2 cursor-pointer overflow-hidden">
+          <div className="absolute bottom-0 left-1/2 w-[78%] -translate-x-1/2 cursor-pointer overflow-hidden max-md:inset-0 max-md:left-0 max-md:w-full max-md:translate-x-0">
             <img
               ref={imageRef}
               src={project.image}
               alt={`${project.title} project preview`}
-              className="block h-auto w-full transform-gpu"
+              className="block h-auto w-full transform-gpu max-md:h-full max-md:object-cover"
             />
           </div>
         </div>
 
         {/* Project info */}
-        <div className="px-1 pt-3">
-          <h3 className="text-xl font-semibold text-neutral-800">
+        <div className="min-w-0 px-1 pt-3">
+          <h3 className="wrap-break-word text-lg font-semibold text-neutral-800 max-md:text-base">
             {project.title}
           </h3>
 
-          <p className="mt-1 text-sm leading-5 text-neutral-500">
+          <p className="mt-1 wrap-break-word text-pretty text-sm leading-5 text-neutral-500">
             {project.description}
           </p>
         </div>
       </div>
 
-      <div className="mt-3 flex items-center justify-between gap-2 px-1">
+      <div className="mt-3 flex items-center justify-between gap-2 px-1 max-[600px]:mt-2 max-[380px]:flex-wrap">
         {/* Tech stack */}
-        <div className="flex min-w-0 flex-wrap items-center justify-end gap-1 cursor-pointer">
+        <div className="flex min-w-0 flex-wrap items-center justify-end gap-1 cursor-pointer max-[600px]:justify-start">
           {project.tech?.map((tech) => (
             <TechItem key={tech.name} tech={tech} />
           ))}
         </div>
         {/* Project links */}
-        <div className="flex shrink-0 items-center gap-3">
+        <div className="flex shrink-0 items-center gap-3 max-[380px]:gap-2">
           <Link
             href={project.github}
             target="_blank"
@@ -152,7 +152,7 @@ function ProjectItem({ project }) {
           >
             <img
               src="/skillsIcons/github-icon.jpeg"
-              className="h-6 w-6 rounded-md object-contain"
+              className="h-6 w-6 rounded-md object-contain max-[380px]:h-5 max-[380px]:w-5"
               alt=""
             />
           </Link>
@@ -166,7 +166,7 @@ function ProjectItem({ project }) {
           >
             <img
               src="/skillsIcons/web-icon.png"
-              className="h-5 w-5 object-contain"
+              className="h-5 w-5 object-contain max-[380px]:h-4 max-[380px]:w-4"
               alt=""
             />
           </Link>
@@ -178,12 +178,12 @@ function ProjectItem({ project }) {
 
 export default function ProjectsCard() {
   return (
-    <div className="projects-content">
-      <h2 className="z-10 mb-3 select-none text-xl font-light uppercase text-neutral-700">
+    <div className="relative flex h-full min-h-0 w-full flex-col overflow-hidden p-4 max-[600px]:p-3.5 max-[380px]:p-3">
+      <h2 className="z-10 mb-3 select-none text-xl font-light uppercase text-neutral-700 max-[600px]:mb-2 max-[600px]:text-lg">
         My Projects
       </h2>
 
-      <div className="projects-list">
+      <div className="flex min-h-0 flex-1 flex-col gap-4 md:max-[1099px]:grid md:max-[1099px]:grid-cols-2">
         {projects.map((project) => (
           <ProjectItem key={project.title} project={project} />
         ))}

@@ -124,7 +124,10 @@ export default function ProfileCard() {
           </div>
         </div>
 
-        <div className="social-links" aria-label="Social links">
+        <div
+          className="social-links"
+          aria-label="Social links"
+        >
           <Link
             href="https://www.linkedin.com/in/dhruv-jha-7a1a4441b/"
             target="_blank"

@@ -39,7 +39,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="projects-card bento-card ">
+        <div className="projects-card bento-card max-md:min-h-160">
           <ProjectsCard />
         </div>
 

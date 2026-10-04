@@ -111,7 +111,7 @@ export default function HobbiesBox() {
       ref={cardRef}
       onMouseEnter={handleCardEnter}
       onMouseLeave={handleCardLeave}
-      className="hobbies-card"
+      className="relative h-full min-h-45 w-full cursor-pointer overflow-hidden"
     >
       <div
         ref={dialogueRef}

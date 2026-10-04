@@ -29,10 +29,10 @@ export default function MailBox() {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="mail-card"
+      className="relative flex h-full w-full min-h-45 flex-col justify-between overflow-hidden rounded-2xl bg-linear-to-t from-purple-400 to-purple-300 p-4 max-[380px]:p-3"
     >
       <div className="relative z-10 text-white">
-        <h1 className="text-3xl font-semibold leading-8">
+        <h1 className="text-3xl font-semibold leading-8 max-[380px]:text-2xl max-[380px]:leading-7">
           Have an
           <br />
           Idea?
@@ -47,7 +47,7 @@ export default function MailBox() {
 
       <Link
         href="/mailbox"
-        className="mail-action"
+        className="relative z-10 flex h-10 w-fit max-w-full items-center justify-center gap-3 rounded-lg bg-white px-4 max-[380px]:gap-2 max-[380px]:px-2 max-[380px]:text-sm"
       >
         <img
           ref={avatarRef}
