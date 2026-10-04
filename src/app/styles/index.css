@@ -1,12 +1,19 @@
+
 @import "tailwindcss";
 
 html,
 body {
-    @apply min-h-full w-full m-0 overflow-x-hidden font-mono;
+    @apply w-full m-0 overflow-x-hidden font-mono;
+    min-height: 100%;
+}
+
+html {
+    height: 100%;
 }
 
 body {
     position: relative;
+    height: 100%;
     min-height: 100vh;
     font-family: var(--font-neue-montreal);
     font-weight: var(--font-neue-montreal-regular);
@@ -19,28 +26,39 @@ body::-webkit-scrollbar {
 }
 
 @utility col-center {
-    @apply flex flex-col justify-center items-center
+    @apply flex flex-col justify-center items-center;
 }
 
 @utility flex-center {
-    @apply flex justify-center items-center
+    @apply flex justify-center items-center;
 }
 
 
+/* =========================================
+   MAIN PORTFOLIO LAYOUT
+========================================= */
 
 @layer components {
+
     .portfolio-container {
-        @apply min-h-screen max-w-390 mx-auto box-border py-5 relative z-10;
+        @apply max-w-390 mx-auto box-border relative z-10;
+        height: 100dvh;
+        padding: 20px 0;
+        overflow: hidden;
     }
 
     .bento-grid {
-        @apply grid min-h-[calc(100vh-3rem)] w-full gap-4;
+        @apply grid w-full gap-4 box-border;
+        height: calc(100dvh - 40px);
+        min-height: 0;
         grid-template-columns: 0.9fr 1.1fr 0.9fr;
-        grid-template-rows: repeat(3, minmax(0, 1fr)) minmax(0, .9fr) minmax(72px, .5fr);
+        grid-template-rows: repeat(3, minmax(0, 1fr)) minmax(0, 0.9fr) minmax(0, 0.5fr);
     }
 
     .bento-card {
         @apply flex flex-col justify-between overflow-hidden rounded-2xl bg-white text-black border border-gray-300/90 box-border shadow-lg shadow-gray-700/20;
+        min-height: 0;
+        min-width: 0;
     }
 
     .card-profile {
@@ -49,6 +67,7 @@ body::-webkit-scrollbar {
 
     .middle-column {
         @apply col-start-2 row-start-1 row-span-4 grid min-w-0 gap-4;
+        min-height: 0;
         grid-template-rows: 1.4fr 1fr 1fr;
     }
 
@@ -65,102 +84,170 @@ body::-webkit-scrollbar {
         @apply col-start-3 row-start-1 row-span-4;
     }
 
+    /* Bottom banner */
+
     .pixel-banner {
         @apply col-span-full row-start-5;
-    }
-}
-
-@media (max-width: 900px) {
-    .bento-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-rows: 330px 220px 220px 190px;
+        min-height: 0;
+        min-width: 0;
+        overflow: hidden;
     }
 
-    .card-profile {
-        @apply row-span-2;
+    .pixel-banner-art {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        overflow: hidden;
+        border-radius: inherit;
+        background: #f1f6ed;
     }
 
-    .middle-column {
-        @apply row-span-2;
+    .pixel-scene {
+        display: block;
+        width: 100%;
+        height: 100%;
+        image-rendering: pixelated;
     }
 
-    .projects-card {
-        @apply col-span-2 col-start-1 row-start-3 row-span-1;
+
+    /* =========================================
+       PIXEL ART ANIMATIONS
+    ========================================= */
+
+    /* Moving clouds */
+
+    .pixel-cloud-a {
+        animation: pixel-cloud-drift 8s ease-in-out infinite alternate;
     }
 
-    .pixel-banner {
-        @apply col-span-full row-span-4;
-    }
-}
-
-@media (max-width: 600px) {
-    .portfolio-container {
-        @apply p-3;
+    .pixel-cloud-b {
+        animation: pixel-cloud-drift 11s ease-in-out infinite alternate-reverse;
     }
 
-    .bento-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        min-height: auto;
+    @keyframes pixel-cloud-drift {
+        from {
+            transform: translateX(-8px);
+        }
+
+        to {
+            transform: translateX(18px);
+        }
     }
 
-    .card-profile {
-        min-height: 400px;
+
+    /* Character bob */
+
+    .pixel-person-bob {
+        animation: pixel-bob 0.55s steps(2, end) infinite;
     }
 
-    .projects-card,
-    .pixel-banner {
-        min-height: 160px;
+    @keyframes pixel-bob {
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-3px);
+        }
     }
 
-    .card-experience {
-        min-height: 140px;
+
+    /* Character legs */
+
+    .pixel-leg-left {
+        transform-box: fill-box;
+        transform-origin: top center;
+        animation: pixel-step-left 0.55s steps(2, end) infinite;
     }
 
-    .middle-column {
-        min-height: 160px;
+    .pixel-leg-right {
+        transform-box: fill-box;
+        transform-origin: top center;
+        animation: pixel-step-right 0.55s steps(2, end) infinite;
     }
 
-    .middle-row,
-    .bottom-row {
-        min-height: 170px;
-        gap: 12px;
+    @keyframes pixel-step-left {
+        0%,
+        100% {
+            transform: rotate(15deg);
+        }
+
+        50% {
+            transform: rotate(-15deg);
+        }
     }
-}
 
-@layer components {
+    @keyframes pixel-step-right {
+        0%,
+        100% {
+            transform: rotate(-15deg);
+        }
 
-    /* Profile Card Container Layout */
+        50% {
+            transform: rotate(15deg);
+        }
+    }
+
+
+    /* Floating birds */
+
+    .pixel-birds {
+        animation: pixel-birds-float 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes pixel-birds-float {
+        from {
+            transform: translateY(0);
+        }
+
+        to {
+            transform: translateY(-5px);
+        }
+    }
+
+
+    /* =========================================
+       PROFILE CARD
+    ========================================= */
+
     .profile-content {
         @apply flex flex-col justify-between h-full w-full relative p-4;
+        min-height: 0;
     }
-
 
     .profile-cover {
         @apply relative w-full h-40;
+        flex-shrink: 0;
     }
 
     .cover-img {
-        @apply object-cover rounded-xl
+        @apply object-cover rounded-xl;
     }
+
+
+    /* Avatar positioning */
 
     .profile-identity-row {
         @apply relative z-10 flex items-center justify-between -mt-22 px-1;
     }
 
-    /* Avatar Positioning */
     .avatar {
         @apply relative ml-3 h-35 w-35 rounded-full border-2 border-white shadow-sm overflow-hidden flex items-center justify-center;
+        flex-shrink: 0;
     }
 
     .profile-img {
         @apply rounded-full object-cover;
     }
 
-    /* Header Section */
+
+    /* Profile heading */
+
     .profile-heading {
-        @apply flex items-start justify-between w-full  px-1;
+        @apply flex items-start justify-between w-full px-1;
+        min-width: 0;
     }
 
     .profile-heading h1 {
@@ -168,10 +255,11 @@ body::-webkit-scrollbar {
     }
 
     .profile-heading p {
-        @apply text-[16px] text-gray-700 font-medium  tracking-tight;
+        @apply text-[16px] text-gray-700 font-medium tracking-tight;
     }
 
 
+    /* Profile intro */
 
     .profile-intro {
         @apply mt-4 px-1 space-y-1.5 tracking-tight;
@@ -186,6 +274,10 @@ body::-webkit-scrollbar {
     }
 
 
+    /* =========================================
+       SCROLLBARS
+    ========================================= */
+
     .no-scrollbar::-webkit-scrollbar {
         display: none;
     }
@@ -195,8 +287,14 @@ body::-webkit-scrollbar {
         scrollbar-width: none;
     }
 
+
+    /* =========================================
+       GITHUB CONTRIBUTION CALENDAR
+    ========================================= */
+
     .calendar-wrapper {
         max-width: 100%;
+        min-width: 0;
         overflow: hidden;
     }
 
@@ -209,9 +307,170 @@ body::-webkit-scrollbar {
         display: none;
     }
 
+
+    /* =========================================
+       SOCIAL LINKS
+    ========================================= */
+
     .social-links {
         @apply flex items-center gap-5 mr-8 px-1 text-xl text-gray-800;
     }
+}
 
 
+/* =========================================
+   TABLET LAYOUT
+========================================= */
+
+@media (max-width: 900px) {
+
+    .portfolio-container {
+        padding: 16px 0;
+        height: 100dvh;
+        overflow: hidden;
+    }
+
+    .bento-grid {
+        height: calc(100dvh - 32px);
+        min-height: 0;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: minmax(0, 2fr) minmax(0, 1.5fr) minmax(0, 1.5fr) minmax(72px, 0.65fr);
+    }
+
+    .card-profile {
+        @apply col-start-1 row-start-1 row-span-2;
+        min-height: 0;
+    }
+
+    .middle-column {
+        @apply col-start-2 row-start-1 row-span-2;
+        min-height: 0;
+        grid-template-rows: 1.4fr 1fr 1fr;
+    }
+
+    .projects-card {
+        @apply col-span-2 col-start-1 row-start-3 row-span-1;
+        min-height: 0;
+    }
+
+    .pixel-banner {
+        @apply col-span-2 col-start-1 row-start-4 row-span-1;
+        min-height: 0;
+    }
+
+    .profile-intro p {
+        font-size: 14px;
+    }
+
+    .profile-heading h1 {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* =========================================
+   MOBILE LAYOUT
+========================================= */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        height: auto;
+        min-height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .portfolio-container {
+        @apply p-3;
+        width: 100%;
+        height: auto;
+        min-height: 100dvh;
+        overflow: visible;
+    }
+
+    .bento-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        height: auto;
+        min-height: 0;
+    }
+
+    .bento-card {
+        min-height: 0;
+    }
+
+    .card-profile {
+        min-height: 400px;
+    }
+
+    .projects-card {
+        min-height: 160px;
+    }
+
+    .pixel-banner {
+        min-height: 0;
+        height: 120px;
+        flex-shrink: 0;
+    }
+
+    .pixel-banner-art {
+        height: 100%;
+        min-height: 0;
+    }
+
+    .card-experience {
+        min-height: 140px;
+    }
+
+    .middle-column {
+        min-height: 0;
+        grid-template-rows: 140px 170px 170px;
+        gap: 12px;
+    }
+
+    .middle-row,
+    .bottom-row {
+        min-height: 0;
+        gap: 12px;
+    }
+
+    .profile-heading h1 {
+        font-size: 1.8rem;
+    }
+
+    .profile-intro p {
+        font-size: 14px;
+    }
+
+    .avatar {
+        @apply h-28 w-28;
+    }
+
+    .profile-identity-row {
+        @apply -mt-18;
+    }
+
+    .social-links {
+        @apply mr-2 gap-4;
+    }
+}
+
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .pixel-cloud-a,
+    .pixel-cloud-b,
+    .pixel-person-bob,
+    .pixel-leg-left,
+    .pixel-leg-right,
+    .pixel-birds {
+        animation: none !important;
+    }
 }

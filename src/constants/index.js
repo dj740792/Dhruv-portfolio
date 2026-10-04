@@ -17,14 +17,21 @@ export const hobbies = [
     name: "Reading",
     icon: "/hobbiesIcons/1984.jpg",
     Href: "",
-    className: "left-[24%] top-[24%] w-14 rotate-[-8deg]",
+    className: "left-[24%] top-[24%] w-14 rotate-[-12deg]",
   },
   {
     name: "LetterBoxd",
     icon: "/hobbiesIcons/letterboxd.jpeg",
     Href: "https://letterboxd.com/Dhruv740/",
-    className: "right-[31%] top-[14%] w-12 rounded-full rotate-[12deg]",
+    className: "right-[28%] top-[14%] w-12 rounded-full rotate-[12deg]",
   },
+  {
+    name: "Barcelona",
+    icon: "/hobbiesIcons/barca.png",
+    Href:"",
+    className: "right-[40%] top-[42%] w-8  rotate-[7deg]",
+  },
+  
   {
     name: "Japanese",
     icon: "/hobbiesIcons/kanji.png",
@@ -35,7 +42,7 @@ export const hobbies = [
     name: "Design",
     icon: "/hobbiesIcons/designBook.png",
     Href: "",
-    className: "right-[16%] bottom-[14%] w-18 rotate-[10deg]",
+    className: "right-[16%] bottom-[14%] w-18 rotate-[7deg]",
   },
 ];
 export const projects = [

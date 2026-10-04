@@ -61,7 +61,7 @@ function TechItem({ tech }) {
     >
       <div
         ref={iconRef}
-        className="flex h-7 w-7 items-center justify-center rounded-[10px] border border-neutral-200 bg-white p-1.5 shadow-[0_1px_3px_rgba(0,0,0,0.08)]"
+        className="flex h-7 w-7 items-center justify-center rounded-[10px] p-1.5 shadow-[0_1px_3px_rgba(0,0,0,0.08)]"
       >
         <img
           src={tech.icon}
@@ -136,13 +136,13 @@ function ProjectItem({ project }) {
 
       <div className="mt-3 flex items-center justify-between gap-2 px-1">
         {/* Tech stack */}
-        <div className="flex min-w-0 flex-wrap items-center justify-end gap-1">
+        <div className="flex min-w-0 flex-wrap items-center justify-end gap-1 cursor-pointer">
           {project.tech?.map((tech) => (
             <TechItem key={tech.name} tech={tech} />
           ))}
         </div>
         {/* Project links */}
-        <div className="flex shrink-0 items-center gap-1.5">
+        <div className="flex shrink-0 items-center gap-3">
           <Link
             href={project.github}
             target="_blank"
