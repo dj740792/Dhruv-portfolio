@@ -18,7 +18,7 @@ export default function Home() {
         </div>
 
         <div className="middle-column">
-          <div className="card-experience bento-card">
+          <div className="card-experience bento-card max-[600px]:hidden">
             <ExperienceBox />
           </div>
 
@@ -43,7 +43,7 @@ export default function Home() {
           <ProjectsCard />
         </div>
 
-        <div className="pixel-banner bento-card  ">
+        <div className="pixel-banner bento-card max-[600px]:min-h-36">
           <BottomBanner />
         </div>
       </div>

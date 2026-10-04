@@ -89,11 +89,11 @@ export default function ProfileCard() {
 
           <div className="profile-intro">
             <h2>What I do?</h2>
-            <p>
+            <p >
               I loves building clean, modern websites where design,
               functionality, and even the smallest details matter. My focus is
               on making products that are both Scalable and visually
-              satisfying.d
+              satisfying.
             </p>
           </div>
 

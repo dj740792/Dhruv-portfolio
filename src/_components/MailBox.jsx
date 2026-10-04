@@ -32,13 +32,13 @@ export default function MailBox() {
       className="relative flex h-full w-full min-h-45 flex-col justify-between overflow-hidden rounded-2xl bg-linear-to-t from-purple-400 to-purple-300 p-4 max-[380px]:p-3"
     >
       <div className="relative z-10 text-white">
-        <h1 className="text-3xl font-semibold leading-8 max-[380px]:text-2xl max-[380px]:leading-7">
+        <h1 className="text-xl lg:text-xl xl:text-2xl font-semibold  xl:leading-7 leading-snug">
           Have an
           <br />
           Idea?
         </h1>
 
-        <p className="mt-2 text-md leading-5">
+        <p className="mt-2 text-sm xl:text-md leading-5">
           Let's build it
           <br />
           together
@@ -47,7 +47,7 @@ export default function MailBox() {
 
       <Link
         href="/mailbox"
-        className="relative z-10 flex h-10 w-fit max-w-full items-center justify-center gap-3 rounded-lg bg-white px-4 max-[380px]:gap-2 max-[380px]:px-2 max-[380px]:text-sm"
+        className="relative z-10 flex h-8 lg:h-10 w-fit max-w-full items-center justify-center gap-3 rounded-lg bg-white px-2 lg:px-2 xl:px-4 "
       >
         <img
           ref={avatarRef}
@@ -56,7 +56,7 @@ export default function MailBox() {
           className="w-7 h-7 object-contain"
         />
 
-        <span className="text-purple-400 font-bold">Let's Talk</span>
+        <span className="text-purple-400 font-bold text-nowrap text-sm xl:text-md">Let's Talk</span>
       </Link>
     </div>
   );

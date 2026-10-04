@@ -107,17 +107,17 @@ function ProjectItem({ project }) {
       onMouseLeave={handleMouseLeave}
       className="relative flex min-h-72 min-w-0 flex-1 flex-col overflow-visible rounded-xl border border-neutral-200 p-2 md:max-[1099px]:min-h-100 max-md:p-2.5"
     >
-      <div className="relative flex min-h-0 flex-1 flex-col overflow-visible ">
+      <div className="relative flex min-h-0 flex-1 flex-col overflow-visible max-[600px]:flex-none">
         {/* Project preview */}
         <div
-          className={`${project.background} relative min-h-0 flex-1 overflow-hidden rounded-xl border border-neutral-200 p-2 max-md:h-36 max-md:flex-none max-md:p-1.5`}
+          className={`${project.background} relative min-h-0 flex-1 overflow-hidden rounded-xl border border-neutral-200 p-2 max-[600px]:h-52 max-[600px]:min-h-52 max-[600px]:flex-none max-[380px]:h-56 max-[380px]:min-h-56`}
         >
-          <div className="absolute bottom-0 left-1/2 w-[78%] -translate-x-1/2 cursor-pointer overflow-hidden max-md:inset-0 max-md:left-0 max-md:w-full max-md:translate-x-0">
+          <div className="absolute bottom-0 left-1/2 w-[78%] -translate-x-1/2 cursor-pointer overflow-hidden">
             <img
               ref={imageRef}
               src={project.image}
               alt={`${project.title} project preview`}
-              className="block h-auto w-full transform-gpu max-md:h-full max-md:object-cover"
+              className="block h-auto w-full transform-gpu"
             />
           </div>
         </div>
