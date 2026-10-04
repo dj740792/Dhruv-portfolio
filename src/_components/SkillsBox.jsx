@@ -8,7 +8,8 @@ import { TECH_STACK } from "@/constants/index";
 export default function SkillsBox() {
   const sceneRef = useRef(null);
   const imageElementsRef = useRef(new Map());
-  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(TECH_STACK.length === 0);
+  const [sceneSize, setSceneSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
     let loadedCount = 0;
@@ -17,10 +18,7 @@ export default function SkillsBox() {
 
     imageElementsRef.current.clear();
 
-    if (totalImages === 0) {
-      setImagesLoaded(true);
-      return;
-    }
+    if (totalImages === 0) return undefined;
 
     TECH_STACK.forEach((item) => {
       const img = new window.Image();
@@ -51,13 +49,31 @@ export default function SkillsBox() {
   }, []);
 
   useEffect(() => {
+    const container = sceneRef.current;
+    if (!container) return undefined;
+
+    const resizeObserver = new ResizeObserver(([entry]) => {
+      const width = Math.round(entry.contentRect.width);
+      const height = Math.round(entry.contentRect.height);
+
+      setSceneSize((currentSize) =>
+        currentSize.width === width && currentSize.height === height
+          ? currentSize
+          : { width, height },
+      );
+    });
+
+    resizeObserver.observe(container);
+    return () => resizeObserver.disconnect();
+  }, []);
+
+  useEffect(() => {
     if (!imagesLoaded) return;
 
     const container = sceneRef.current;
     if (!container) return;
 
-    const width = container.clientWidth;
-    const height = container.clientHeight;
+    const { width, height } = sceneSize;
 
     if (!width || !height) return;
 
@@ -111,7 +127,7 @@ export default function SkillsBox() {
     );
 
     const balls = loadedItems.map((item, index) => {
-      const radius = item.radius || 22;
+      const radius = Math.min(item.radius || 22, Math.max(12, width * 0.075));
       const spacing = radius * 2 + 12;
       const columns = Math.max(1, Math.floor(width / spacing));
       const row = Math.floor(index / columns);
@@ -217,7 +233,7 @@ export default function SkillsBox() {
       render.canvas.remove();
       render.textures = {};
     };
-  }, [imagesLoaded]);
+  }, [imagesLoaded, sceneSize]);
 
   return (
     <div className="relative flex h-full min-h-45 w-full flex-col justify-between overflow-hidden p-4">

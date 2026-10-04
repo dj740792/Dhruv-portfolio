@@ -18,7 +18,7 @@ export default function Home() {
         </div>
 
         <div className="middle-column">
-          <div className="card-experience bento-card bg-green-400">
+          <div className="card-experience bento-card">
             <ExperienceBox />
           </div>
 
@@ -43,7 +43,7 @@ export default function Home() {
           <ProjectsCard />
         </div>
 
-        <div className="pixel-banner rounded-xl ">
+        <div className="pixel-banner bento-card  ">
           <BottomBanner />
         </div>
       </div>

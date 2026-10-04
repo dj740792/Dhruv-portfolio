@@ -111,14 +111,14 @@ export default function HobbiesBox() {
       ref={cardRef}
       onMouseEnter={handleCardEnter}
       onMouseLeave={handleCardLeave}
-      className="relative h-full min-h-45 w-full overflow-hidden cursor-pointer"
+      className="hobbies-card"
     >
       <div
         ref={dialogueRef}
         className="pointer-events-none absolute right-[5%] top-[35%] z-20 origin-bottom-left"
         style={{ opacity: 1, scale: 1 }}
       >
-        <div className="relative w-40 rounded-xl bg-neutral-200 px-4 py-2 text-[12px] leading-tight text-neutral-700">
+        <div className="relative w-[min(10rem,80vw)] rounded-xl bg-neutral-200 px-4 py-2 text-[12px] leading-tight text-neutral-700">
           <p>{HobbiesDialogue}</p>
           <div className="absolute -bottom-1.25 left-2.5 h-4 w-3 rotate-45 bg-neutral-200" />
         </div>
@@ -152,7 +152,7 @@ export default function HobbiesBox() {
       <img
         src="/dhruv.png"
         alt=""
-        className="pointer-events-none absolute -bottom-2.5 left-1/2 z-30 w-30 -translate-x-1/2 object-contain"
+        className="pointer-events-none absolute -bottom-2.5 left-1/2 z-30 w-[clamp(5rem,18vw,7.5rem)] -translate-x-1/2 object-contain"
       />
     </div>
   );

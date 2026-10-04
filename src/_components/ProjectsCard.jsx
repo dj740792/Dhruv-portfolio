@@ -105,7 +105,7 @@ function ProjectItem({ project }) {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative flex min-h-0 flex-1 flex-col overflow-visible rounded-xl border border-neutral-200 p-2"
+      className="project-item"
     >
       <div className="relative flex min-h-0 flex-1 flex-col overflow-visible">
         {/* Project preview */}
@@ -178,12 +178,12 @@ function ProjectItem({ project }) {
 
 export default function ProjectsCard() {
   return (
-    <div className="relative flex h-full min-h-45 w-full flex-col overflow-hidden p-4">
+    <div className="projects-content">
       <h2 className="z-10 mb-3 select-none text-xl font-light uppercase text-neutral-700">
         My Projects
       </h2>
 
-      <div className="flex min-h-0 flex-1 flex-col gap-4">
+      <div className="projects-list">
         {projects.map((project) => (
           <ProjectItem key={project.title} project={project} />
         ))}
