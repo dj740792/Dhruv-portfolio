@@ -100,7 +100,7 @@ export default function DesignGalleryCard() {
           className="absolute -bottom-14 left-2 h-[clamp(5rem,26vw,8rem)] w-[clamp(4rem,22vw,7rem)] bg-neutral-100 overflow-hidden -rotate-8 transform-gpu origin-bottom-left max-[600px]:h-32 max-[600px]:w-28"
         >
           <img
-            src="/intro.jpg"
+            src="/Intro.jpg"
             alt="about jpg"
             className="w-full border border-neutral-200 h-full object-cover"
           />

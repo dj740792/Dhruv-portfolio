@@ -47,7 +47,7 @@ export default function MailBox() {
 
       <Link
         href="/mailbox"
-        className="relative z-10 flex h-8 lg:h-10 w-fit max-w-full items-center justify-center gap-3 rounded-lg bg-white px-2 lg:px-2 xl:px-4 "
+        className="relative z-10 flex h-8 lg:h-10 w-fit max-w-full items-center justify-center gap-3 rounded-lg bg-white px-2 lg:px-2 xl:px-4"
       >
         <img
           ref={avatarRef}
