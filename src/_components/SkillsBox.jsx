@@ -127,28 +127,30 @@ export default function SkillsBox() {
       imageElementsRef.current.has(item.icon)
     );
 
-    const balls = loadedItems.map((item, index) => {
+    const placedBalls = [];
+    const balls = loadedItems.map((item) => {
       const configuredRadius = item.radius ?? 22;
       const radius = useConfiguredRadii
         ? configuredRadius
         : Math.min(configuredRadius, Math.max(12, width * 0.075));
-      const spacing = radius * 2 + 12;
-      const columns = Math.max(1, Math.floor(width / spacing));
-      const row = Math.floor(index / columns);
-      const col = index % columns;
-      const itemsInRow = Math.min(
-        columns,
-        loadedItems.length - row * columns
-      );
+      const minY = Math.max(radius, height * 0.25);
+      const maxY = Math.max(minY, height - radius - 12);
+      let startX = radius;
+      let startY = minY;
 
-      const rowWidth = itemsInRow * spacing - 12;
-      const startX =
-        (width - rowWidth) / 2 + radius + col * spacing;
-      const startY =
-        height -
-        radius -
-        12 -
-        row * (radius * 2 + 10);
+      for (let attempt = 0; attempt < 60; attempt++) {
+        startX = radius + Math.random() * Math.max(0, width - radius * 2);
+        startY = minY + Math.random() * Math.max(0, maxY - minY);
+
+        const overlaps = placedBalls.some(
+          (ball) =>
+            Matter.Vector.magnitude(
+              Matter.Vector.sub(ball.position, { x: startX, y: startY }),
+            ) < ball.radius + radius + 4,
+        );
+
+        if (!overlaps) break;
+      }
 
       const body = Matter.Bodies.circle(
         Math.max(radius, Math.min(width - radius, startX)),
@@ -164,7 +166,13 @@ export default function SkillsBox() {
         }
       );
 
+      Matter.Body.setVelocity(body, {
+        x: (Math.random() - 0.5) * 2,
+        y: Math.random() * 0.5,
+      });
+      Matter.Body.setAngularVelocity(body, (Math.random() - 0.5) * 0.08);
       body.iconPath = item.icon;
+      placedBalls.push({ position: body.position, radius });
       return body;
     });
 
