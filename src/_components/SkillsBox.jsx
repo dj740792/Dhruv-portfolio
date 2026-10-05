@@ -77,6 +77,7 @@ export default function SkillsBox() {
 
     if (!width || !height) return;
 
+    const useConfiguredRadii = window.matchMedia("(min-width: 1024px)").matches;
     const engine = Matter.Engine.create();
     engine.world.gravity.y = 1.2;
 
@@ -127,7 +128,10 @@ export default function SkillsBox() {
     );
 
     const balls = loadedItems.map((item, index) => {
-      const radius = Math.min(item.radius || 22, Math.max(12, width * 0.075));
+      const configuredRadius = item.radius ?? 22;
+      const radius = useConfiguredRadii
+        ? configuredRadius
+        : Math.min(configuredRadius, Math.max(12, width * 0.075));
       const spacing = radius * 2 + 12;
       const columns = Math.max(1, Math.floor(width / spacing));
       const row = Math.floor(index / columns);

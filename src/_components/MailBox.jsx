@@ -39,7 +39,7 @@ export default function MailBox() {
         </h1>
 
         <p className="mt-2 text-sm xl:text-md leading-5">
-          Let's build it
+          Let&apos;s build it
           <br />
           together
         </p>
@@ -47,16 +47,18 @@ export default function MailBox() {
 
       <Link
         href="/mailbox"
-        className="relative z-10 flex h-8 lg:h-10 w-fit max-w-full items-center justify-center gap-3 rounded-lg bg-white px-2 lg:px-2 xl:px-4"
+        className="relative z-10 flex h-8 lg:h-10 w-fit max-w-full items-center justify-center gap-3 rounded-lg bg-white px-2 max-[600px]:gap-1 max-[600px]:px-1 lg:px-2 xl:px-4"
       >
         <img
           ref={avatarRef}
           src="/favicon.ico"
           alt=""
-          className="w-7 h-7 object-contain"
+          className="w-7 h-7 shrink-0 object-contain max-[600px]:h-6 max-[600px]:w-6 "
         />
 
-        <span className="text-purple-400 font-bold text-nowrap text-sm xl:text-md">Let's Talk</span>
+        <span className="text-purple-400 font-bold text-nowrap text-sm xl:text-md max-[600px]:text-xs">
+          Let&apos;s Talk
+        </span>
       </Link>
     </div>
   );
