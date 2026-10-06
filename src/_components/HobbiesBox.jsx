@@ -186,7 +186,7 @@ export default function HobbiesBox() {
           scale: 1,
         }}
       >
-        <div className="relative w-[min(10rem,80vw)] rounded-xl bg-neutral-200 px-4 py-2 text-[12px] leading-tight text-neutral-700">
+        <div className="relative w-[min(10rem,80vw)] hidden lg:block rounded-xl bg-neutral-200 px-4 py-2 text-[12px] leading-tight text-neutral-700">
           <p>{HobbiesDialogue}</p>
 
           <div className="absolute -bottom-1.25 left-2.5 h-4 w-3 rotate-45 bg-neutral-200" />
