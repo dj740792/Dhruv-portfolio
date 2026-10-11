@@ -81,10 +81,10 @@ export default function Navbar() {
   return (
     <nav
       aria-label="Main navigation"
-      className="fixed bottom-[max(20px,env(safe-area-inset-bottom))] left-1/2 z-50 flex -translate-x-1/2 items-center gap-3"
+      className="fixed bottom-[max(20px,env(safe-area-inset-bottom))] left-1/2 z-50 flex -translate-x-1/2 items-center"
     >
       <div
-        className={`${surface} flex h-14.5 w-85 items-center justify-between rounded-[19px] px-2.5`}
+        className={`${surface} flex h-14.5 w-70 items-center justify-between rounded-2xl px-2.5`}
       >
         {navigationItems.map(({ label, href, icon: Icon }) => (
           <Link

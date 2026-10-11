@@ -1,8 +1,21 @@
 import "./styles/index.css";
+import {  Poppins, Caveat } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: "400",
+  display:"swap"
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: "600",
+  display:"swap"
+});
 
 
 export const metadata = {
-  title: "Dhruv's portfolio",
+  title: "Dhruv Jha",
   description: "Dhruv's personal corner on the web",
 };
 
@@ -10,9 +23,9 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`h-full antialiased`}
+      className={`${poppins.variable} ${caveat.variable} h-full antialiased`}
     >
-      <body>{children}</body>
+      <body className={`${poppins.className}`}>{children}</body>
     </html>
   );
 }
