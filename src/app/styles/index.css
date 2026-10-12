@@ -12,6 +12,32 @@ body {
     color: #1b1717;
 }
 
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    pointer-events: none;
+    border: 1px solid rgb(27 23 23 / 18%);
+    background:
+        radial-gradient(ellipse 18% 64px at 4% 0%, rgb(149 163 148 / 27%), transparent 78%),
+        radial-gradient(ellipse 21% 56px at 25% 0%, rgb(178 185 167 / 23%), transparent 80%),
+        radial-gradient(ellipse 17% 68px at 51% 0%, rgb(154 168 158 / 25%), transparent 78%),
+        radial-gradient(ellipse 22% 58px at 77% 0%, rgb(179 184 170 / 22%), transparent 80%),
+        radial-gradient(ellipse 18% 64px at 98% 0%, rgb(149 163 148 / 25%), transparent 78%),
+        radial-gradient(ellipse 68px 23% at 0% 12%, rgb(165 176 161 / 23%), transparent 80%),
+        radial-gradient(ellipse 56px 22% at 0% 48%, rgb(184 185 169 / 20%), transparent 82%),
+        radial-gradient(ellipse 66px 21% at 0% 84%, rgb(158 172 160 / 23%), transparent 80%),
+        radial-gradient(ellipse 68px 23% at 100% 18%, rgb(165 176 161 / 23%), transparent 80%),
+        radial-gradient(ellipse 56px 22% at 100% 53%, rgb(184 185 169 / 20%), transparent 82%),
+        radial-gradient(ellipse 66px 21% at 100% 87%, rgb(158 172 160 / 23%), transparent 80%),
+        radial-gradient(ellipse 20% 58px at 12% 100%, rgb(149 163 148 / 24%), transparent 78%),
+        radial-gradient(ellipse 18% 66px at 40% 100%, rgb(178 185 167 / 21%), transparent 80%),
+        radial-gradient(ellipse 22% 54px at 68% 100%, rgb(154 168 158 / 24%), transparent 78%),
+        radial-gradient(ellipse 18% 64px at 94% 100%, rgb(179 184 170 / 21%), transparent 80%);
+    box-shadow: inset 0 0 18px rgb(27 23 23 / 10%);
+}
+
 body::-webkit-scrollbar {
     display: none;
 }
@@ -23,4 +49,3 @@ body::-webkit-scrollbar {
 @utility flex-center {
     @apply flex justify-center items-center
 }
-

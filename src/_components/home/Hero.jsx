@@ -2,7 +2,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { Caveat } from "next/font/google";
 
@@ -17,6 +17,7 @@ const caveat = Caveat({
 export default function Hero() {
   const roleRef = useRef(null);
   const locationRef = useRef(null);
+  const [isLocationPreviewOpen, setIsLocationPreviewOpen] = useState(false);
 
   const showPreview = (ref) => {
     if (!ref.current) return;
@@ -42,15 +43,32 @@ export default function Hero() {
     });
   };
 
+  const showLocationPreview = () => {
+    setIsLocationPreviewOpen(true);
+    showPreview(locationRef);
+  };
+
+  const hideLocationPreview = () => {
+    setIsLocationPreviewOpen(false);
+    hidePreview(locationRef);
+  };
+
   return (
-    <section className="mx-auto w-full max-w-500 px-6 pt-5 sm:px-10 ">
-      <div className="relative xl:h-65 sm:w-100 lg:w-200 overflow-hidden sm:h-45 ">
+    <section className="mx-auto w-full max-w-500 px-6 pt-5 sm:px-10">
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none fixed inset-0 z-60 bg-neutral-900/10 backdrop-blur-[5px] transition-opacity duration-300 ${
+          isLocationPreviewOpen ? "opacity-100" : "opacity-0"
+        }`}
+      />
+
+      <div className="relative mx-auto flex  w-full overflow-hidden sm:aspect-auto sm:h-45 sm:w-100 lg:w-200 xl:h-65">
         <Image
           src="/banner.gif"
           alt="Underwater landscape"
           fill
           priority
-          sizes="(max-width: 768px) 100vw, 1200px"
+          sizes="(max-width: 768px) 100vw, 1400px"
           className="object-cover"
         />
       </div>
@@ -103,24 +121,30 @@ export default function Hero() {
             <button
               type="button"
               className="underline decoration-dotted decoration-neutral-400 underline-offset-4 transition-colors cursor-pointer"
-              onMouseEnter={() => showPreview(locationRef)}
-              onMouseLeave={() => hidePreview(locationRef)}
-              onFocus={() => showPreview(locationRef)}
-              onBlur={() => hidePreview(locationRef)}
+              onMouseEnter={showLocationPreview}
+              onMouseLeave={hideLocationPreview}
+              onFocus={showLocationPreview}
+              onBlur={hideLocationPreview}
             >
               Delhi
             </button>
 
             <span
               ref={locationRef}
-              className="invisible pointer-events-none absolute bottom-full left-1/2 z-20 mb-3 w-36 -translate-x-1/2 rounded-xl border border-neutral-200 bg-white p-3 text-center text-xs text-neutral-700 shadow-lg"
+              className="invisible pointer-events-none absolute bottom-full left-1/2 z-70 mb-1 w-36 -translate-x-1/2  p-2"
             >
-              New Delhi, India
+              <Image
+                src="/delhi.svg"
+                alt="Delhi"
+                width={66}
+                height={76}
+                className="mx-auto"
+              />
             </span>
           </span>
         </p>
 
-        <p className="mt-6 max-w-90 text-center text-xs leading-relaxed text-neutral-500">
+        <p className="mt-6 max-w-100 text-center text-xs lg:text-sm 2xl:text-md leading-relaxed text-neutral-500">
           I love building clean, modern websites where design,
           functionality, and even the smallest details matter.
         </p>
