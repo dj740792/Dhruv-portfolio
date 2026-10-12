@@ -44,7 +44,7 @@ export default function Hero() {
 
   return (
     <section className="mx-auto w-full max-w-500 px-6 pt-5 sm:px-10 ">
-      <div className="relative h-45 w-100 lg:w-200 overflow-hidden sm:h-45">
+      <div className="relative xl:h-65 sm:w-100 lg:w-200 overflow-hidden sm:h-45 ">
         <Image
           src="/banner.gif"
           alt="Underwater landscape"

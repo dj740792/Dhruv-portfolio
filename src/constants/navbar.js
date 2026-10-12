@@ -9,6 +9,7 @@ import {
   FaXTwitter,
   FaLinkedinIn,
 } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
 
 export const navigationItems = [
   { label: "Home", href: "/", icon: FaHouse },
@@ -24,6 +25,12 @@ export const socialItems = [
     href: "https://www.linkedin.com/in/dhruv-jha-7a1a4441b/",
     icon: FaLinkedinIn,
   },
+  {
+    label:"Email",
+    icon: MdEmail,
+    href:"https://mail.google.com/mail/u/0/#inbox",
+  }
+
 ];
 
 export const contactItem = {
