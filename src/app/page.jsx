@@ -1,11 +1,13 @@
 import Hero from "@/_components/home/Hero"
+import Works from "@/_components/home/Works"
 import Navbar from "@/_components/ui/Navbar"
 
 export default function page() {
   return (
-    <div className='flex justify-center items-center h-screen'>
+    <div className='flex justify-center items-center'>
       <main className='w-full'>
         <Hero />
+        <Works />
       </main>
        <Navbar />
     </div>

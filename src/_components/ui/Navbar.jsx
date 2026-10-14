@@ -96,6 +96,7 @@ export default function Navbar() {
             onMouseLeave={(e) => animateIcon(e, 1, 1)}
             onFocus={(e) => animateIcon(e, 1.15, 1.4)}
             onBlur={(e) => animateIcon(e, 1, 0.75)}
+            onClick={(e)=> animateIcon(e, 1, 0.75)}
           >
             <Icon className="nav-icon h-5.25 w-5.25" />
           </Link>
@@ -110,6 +111,7 @@ export default function Navbar() {
               hideSocials();
             }
           }}
+          onClick={(e)=> animateIcon(e, 1, 0.75)}
         >
           <button
             type="button"
@@ -120,7 +122,7 @@ export default function Navbar() {
             onMouseEnter={(e) => animateIcon(e, 1.5, 1.4)}
             onMouseLeave={(e) => animateIcon(e, 1, 1)}
             onFocus={(e) => animateIcon(e, 1.15, 1.4)}
-            onBlur={(e) => animateIcon(e, 1, 0.75)}
+            onBlur={(e) => animateIcon(e, 1, 0.75)}          
           >
             <contactItem.icon className="nav-icon h-5.25 w-5.25 cursor-pointer " />
           </button>

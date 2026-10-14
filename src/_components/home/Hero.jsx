@@ -62,13 +62,13 @@ export default function Hero() {
         }`}
       />
 
-      <div className="relative mx-auto flex  w-full overflow-hidden sm:aspect-auto sm:h-45 sm:w-100 lg:w-200 xl:h-65">
+      <div className="relative mx-auto flex aspect-10/7 w-full overflow-hidden sm:aspect-auto sm:h-45 sm:w-100 lg:w-150 xl:w-200  xl:h-65">
         <Image
           src="/banner.gif"
           alt="Underwater landscape"
           fill
           priority
-          sizes="(max-width: 768px) 100vw, 1400px"
+          sizes="(max-width: 768px) 100vw, 1200px"
           className="object-cover"
         />
       </div>
