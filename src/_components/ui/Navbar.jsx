@@ -92,7 +92,7 @@ export default function Navbar() {
             href={href}
             aria-label={label}
             className={buttonStyle}
-            onMouseEnter={(e) => animateIcon(e, 1.5, 1.4)}
+            onMouseEnter={(e) => animateIcon(e, 1.3, 1.4)}
             onMouseLeave={(e) => animateIcon(e, 1, 1)}
             onFocus={(e) => animateIcon(e, 1.15, 1.4)}
             onBlur={(e) => animateIcon(e, 1, 0.75)}

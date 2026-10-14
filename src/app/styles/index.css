@@ -18,12 +18,12 @@ body::after {
     inset: 0;
     z-index: 40;
     pointer-events: none;
-    border: 1px solid rgb(27 23 23 / 18%);
+    border: 1px solid rgba(203, 199, 199, 0.18);
     background:
-        radial-gradient(ellipse 20% 82px at 4% 0%, rgb(120 133 120 / 42%), transparent 78%),
-        radial-gradient(ellipse 23% 72px at 25% 0%, rgb(148 154 139 / 36%), transparent 80%),
-        radial-gradient(ellipse 19% 88px at 51% 0%, rgb(126 140 130 / 40%), transparent 78%),
-        radial-gradient(ellipse 24% 74px at 77% 0%, rgb(150 155 141 / 35%), transparent 80%),
+        radial-gradient(ellipse 20% 82px at 4% 0%, rgba(228, 230, 228, 0.42), transparent 78%),
+        radial-gradient(ellipse 23% 72px at 25% 0%, rgb(228, 230, 228, 0.42), transparent 80%),
+        radial-gradient(ellipse 19% 88px at 51% 0%, rgb(228, 230, 228, 0.42), transparent 78%),
+        radial-gradient(ellipse 24% 74px at 77% 0%, rgb(228, 230, 228, 0.42), transparent 80%),
         radial-gradient(ellipse 20% 82px at 98% 0%, rgb(120 133 120 / 40%), transparent 78%),
         radial-gradient(ellipse 82px 26% at 0% 12%, rgb(132 145 129 / 38%), transparent 80%),
         radial-gradient(ellipse 68px 25% at 0% 48%, rgb(151 152 135 / 33%), transparent 82%),

@@ -1,4 +1,5 @@
 import Hero from "@/_components/home/Hero"
+import TechStack from "@/_components/home/TechStack"
 import Works from "@/_components/home/Works"
 import Navbar from "@/_components/ui/Navbar"
 
@@ -8,8 +9,9 @@ export default function page() {
       <main className='w-full'>
         <Hero />
         <Works />
+        <TechStack />
       </main>
-       <Navbar />
+       {/* <Navbar /> */}
     </div>
   )
 }
