@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -6,18 +5,18 @@ import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { Caveat } from "next/font/google";
 
-
 const caveat = Caveat({
   subsets: ["latin"],
   weight: "600",
-  display:"swap"
+  display: "swap",
 });
-
 
 export default function Hero() {
   const roleRef = useRef(null);
   const locationRef = useRef(null);
+
   const [isLocationPreviewOpen, setIsLocationPreviewOpen] = useState(false);
+  const [isImageOpen, setIsImageOpen] = useState(false);
 
   const showPreview = (ref) => {
     if (!ref.current) return;
@@ -62,7 +61,7 @@ export default function Hero() {
         }`}
       />
 
-      <div className="relative mx-auto flex aspect-10/7 w-full overflow-hidden sm:aspect-auto sm:h-45 sm:w-100 lg:w-150 xl:w-200  xl:h-65">
+      <div className="relative mx-auto flex aspect-10/7 w-full overflow-hidden sm:aspect-auto sm:h-45 sm:w-100 lg:w-150 xl:h-65 xl:w-200">
         <Image
           src="/banner.gif"
           alt="Underwater landscape"
@@ -74,19 +73,24 @@ export default function Hero() {
       </div>
 
       <div className="flex flex-col items-center pt-14 sm:pt-16">
-        <div className="relative h-22.5 w-22.5 overflow-hidden rounded-xl">
+        <button
+          type="button"
+          onClick={() => setIsImageOpen(true)}
+          className="relative h-22 w-22 cursor-pointer overflow-hidden rounded-xl xl:h-25 xl:w-25"
+          aria-label="View profile picture"
+        >
           <Image
-            src="/profile.jpg"
+            src="/dhruv.jpg"
             alt="Dhruv Jha"
             fill
             priority
-            sizes="90px"
+            sizes="200px"
             className="object-cover"
           />
-        </div>
+        </button>
 
         <div className="mt-14 flex items-baseline justify-center gap-3">
-          <span className="text-sm text-neutral-500 sm:text-base ">
+          <span className="text-sm text-neutral-500 sm:text-base">
             Hey I'm,
           </span>
 
@@ -95,12 +99,12 @@ export default function Hero() {
           </h1>
         </div>
 
-        <p className="mt-10 text-center text-sm xl:text-md text-neutral-500 sm:text-base">
+        <p className="mt-10 text-center text-sm text-neutral-500 sm:text-base xl:text-md">
           a 21 yo{" "}
           <span className="relative inline-block">
             <button
               type="button"
-              className="underline decoration-dotted decoration-neutral-400 underline-offset-4  cursor-pointer"
+              className="cursor-pointer underline decoration-dotted decoration-neutral-400 underline-offset-4"
               onMouseEnter={() => showPreview(roleRef)}
               onMouseLeave={() => hidePreview(roleRef)}
               onFocus={() => showPreview(roleRef)}
@@ -111,7 +115,7 @@ export default function Hero() {
 
             <span
               ref={roleRef}
-              className="invisible pointer-events-none absolute bottom-full left-1/2 z-20 mb-3 w-36 -translate-x-1/2 rounded-xl border border-neutral-200 p-3 bg-white text-center text-xs text-neutral-700 shadow-lg"
+              className="invisible pointer-events-none absolute bottom-full left-1/2 z-20 mb-3 w-36 -translate-x-1/2 rounded-xl border border-neutral-200 bg-white p-3 text-center text-xs text-neutral-700 shadow-lg"
             >
               Design meets code.
             </span>
@@ -120,7 +124,7 @@ export default function Hero() {
           <span className="relative inline-block">
             <button
               type="button"
-              className="underline decoration-dotted decoration-neutral-400 underline-offset-4 transition-colors cursor-pointer"
+              className="cursor-pointer underline decoration-dotted decoration-neutral-400 underline-offset-4"
               onMouseEnter={showLocationPreview}
               onMouseLeave={hideLocationPreview}
               onFocus={showLocationPreview}
@@ -131,7 +135,7 @@ export default function Hero() {
 
             <span
               ref={locationRef}
-              className="invisible pointer-events-none absolute bottom-full left-1/2 z-70 mb-1 w-36 -translate-x-1/2  p-2"
+              className="invisible pointer-events-none absolute bottom-full left-1/2 z-70 mb-1 w-36 -translate-x-1/2 p-2"
             >
               <Image
                 src="/delhi.svg"
@@ -144,11 +148,31 @@ export default function Hero() {
           </span>
         </p>
 
-        <p className="mt-6 max-w-100 text-center text-xs lg:text-sm 2xl:text-md leading-relaxed text-neutral-500">
+        <p className="mt-6 max-w-100 text-center text-xs leading-relaxed text-neutral-500 lg:text-sm 2xl:text-md">
           I love building clean, modern websites where design,
           functionality, and even the smallest details matter.
         </p>
       </div>
+
+      {isImageOpen && (
+        <div
+          className="fixed inset-0 z-100 flex cursor-pointer items-center justify-center bg-black/70 p-6 backdrop-blur-sm"
+          onClick={() => setIsImageOpen(false)}
+        >
+          <div
+            className="relative h-[80vh] w-full max-w-3xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <Image
+              src="/dhruv.jpg"
+              alt="Dhruv Jha"
+              fill
+              className="object-contain"
+              sizes="90vw"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
