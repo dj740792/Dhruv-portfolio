@@ -80,7 +80,7 @@ export default function Hero() {
           aria-label="View profile picture"
         >
           <Image
-            src="/dhruv.jpg"
+            src="/profile.jpg"
             alt="Dhruv Jha"
             fill
             priority
@@ -164,7 +164,7 @@ export default function Hero() {
             onClick={(event) => event.stopPropagation()}
           >
             <Image
-              src="/dhruv.jpg"
+              src="/profile.jpg"
               alt="Dhruv Jha"
               fill
               className="object-contain"

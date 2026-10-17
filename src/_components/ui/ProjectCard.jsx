@@ -8,7 +8,7 @@ export default function ProjectCard({ project }) {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.7;
+      videoRef.current.playbackRate = 0.6;
     }
   }, []);
   return (
@@ -28,7 +28,7 @@ export default function ProjectCard({ project }) {
         </div>
       </div>
       <div className="mt-3 flex items-center justify-between px-2">
-        <h3 className="text-sm text-neutral-900 xl:text-md">{project.name}</h3>
+        <h3 className="text-sm text-neutral-900 xl:text-md ">{project.name}</h3>
         <span className="text-xs text-neutral-500 ">{project.year}</span>
       </div>
     </Link>
