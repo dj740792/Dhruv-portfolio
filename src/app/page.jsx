@@ -11,9 +11,9 @@ export default function page() {
       <main className="w-full">
         <Hero />
         <Works />
-     
+     <Footer />
       </main>
-      <Footer />
+      
     </div>
   );
 }

@@ -27,7 +27,7 @@ export default function Hero() {
         }`}
       />
 
-      <div className="hero-banner relative mx-auto flex aspect-10/7 w-full overflow-hidden sm:aspect-auto sm:h-45 sm:w-100 xl:h-65 lg:h-60 lg:w-130">
+      <div className="hero-banner relative mx-auto flex aspect-10/7 w-full overflow-hidden sm:aspect-auto sm:h-45 sm:w-100 xl:h-75 xl:w-150 lg:h-60 lg:w-130">
         <Image
           src="/banner.gif"
           alt="Underwater landscape"
@@ -83,15 +83,7 @@ export default function Hero() {
               Design Engineer
             </button>
 
-            <span
-              className={`pointer-events-none absolute bottom-full left-1/2 z-20 mb-3 w-36 -translate-x-1/2 rounded-xl border border-neutral-200 bg-white p-3 text-center text-xs text-neutral-700 shadow-lg transition-all duration-200 ease-out ${
-                isRolePreviewOpen
-                  ? "visible translate-y-0 scale-100 opacity-100"
-                  : "invisible translate-y-2 scale-95 opacity-0"
-              }`}
-            >
-              Design meets code.
-            </span>
+           
           </span>{" "}
           based in{" "}
           <span className="relative inline-block">
