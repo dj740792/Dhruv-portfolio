@@ -1,56 +1,22 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
-import { gsap } from "gsap";
+import { useState } from "react";
 import { Caveat } from "next/font/google";
 
 const caveat = Caveat({
   subsets: ["latin"],
-  weight: "600",
+  
   display: "swap",
 });
 
 export default function Hero() {
-  const roleRef = useRef(null);
-  const locationRef = useRef(null);
-
-  const [isLocationPreviewOpen, setIsLocationPreviewOpen] = useState(false);
+  const [hoveredPreview, setHoveredPreview] = useState(null);
+  const [focusedPreview, setFocusedPreview] = useState(null);
   const [isImageOpen, setIsImageOpen] = useState(false);
-
-  const showPreview = (ref) => {
-    if (!ref.current) return;
-
-    gsap.to(ref.current, {
-      autoAlpha: 1,
-      y: 0,
-      scale: 1,
-      duration: 0.35,
-      ease: "power2.out",
-    });
-  };
-
-  const hidePreview = (ref) => {
-    if (!ref.current) return;
-
-    gsap.to(ref.current, {
-      autoAlpha: 0,
-      y: 8,
-      scale: 0.95,
-      duration: 0.2,
-      ease: "power2.in",
-    });
-  };
-
-  const showLocationPreview = () => {
-    setIsLocationPreviewOpen(true);
-    showPreview(locationRef);
-  };
-
-  const hideLocationPreview = () => {
-    setIsLocationPreviewOpen(false);
-    hidePreview(locationRef);
-  };
+  const activePreview = hoveredPreview ?? focusedPreview;
+  const isRolePreviewOpen = activePreview === "role";
+  const isLocationPreviewOpen = activePreview === "location";
 
   return (
     <section className="mx-auto w-full max-w-500 px-6 pt-5 sm:px-10">
@@ -61,7 +27,7 @@ export default function Hero() {
         }`}
       />
 
-      <div className="relative mx-auto flex aspect-10/7 w-full overflow-hidden sm:aspect-auto sm:h-45 sm:w-100 lg:w-150 xl:h-65 xl:w-200">
+      <div className="hero-banner relative mx-auto flex aspect-10/7 w-full overflow-hidden sm:aspect-auto sm:h-45 sm:w-100 xl:h-65 lg:h-60 lg:w-130">
         <Image
           src="/banner.gif"
           alt="Underwater landscape"
@@ -76,7 +42,7 @@ export default function Hero() {
         <button
           type="button"
           onClick={() => setIsImageOpen(true)}
-          className="relative h-22 w-22 cursor-pointer overflow-hidden rounded-xl xl:h-25 xl:w-25"
+          className="relative h-22 w-22 cursor-pointer overflow-hidden rounded-xl"
           aria-label="View profile picture"
         >
           <Image
@@ -105,17 +71,24 @@ export default function Hero() {
             <button
               type="button"
               className="cursor-pointer underline decoration-dotted decoration-neutral-400 underline-offset-4"
-              onMouseEnter={() => showPreview(roleRef)}
-              onMouseLeave={() => hidePreview(roleRef)}
-              onFocus={() => showPreview(roleRef)}
-              onBlur={() => hidePreview(roleRef)}
+              onMouseEnter={() => setHoveredPreview("role")}
+              onMouseLeave={() => setHoveredPreview(null)}
+              onFocus={(event) =>
+                setFocusedPreview(
+                  event.currentTarget.matches(":focus-visible") ? "role" : null,
+                )
+              }
+              onBlur={() => setFocusedPreview(null)}
             >
               Design Engineer
             </button>
 
             <span
-              ref={roleRef}
-              className="invisible pointer-events-none absolute bottom-full left-1/2 z-20 mb-3 w-36 -translate-x-1/2 rounded-xl border border-neutral-200 bg-white p-3 text-center text-xs text-neutral-700 shadow-lg"
+              className={`pointer-events-none absolute bottom-full left-1/2 z-20 mb-3 w-36 -translate-x-1/2 rounded-xl border border-neutral-200 bg-white p-3 text-center text-xs text-neutral-700 shadow-lg transition-all duration-200 ease-out ${
+                isRolePreviewOpen
+                  ? "visible translate-y-0 scale-100 opacity-100"
+                  : "invisible translate-y-2 scale-95 opacity-0"
+              }`}
             >
               Design meets code.
             </span>
@@ -125,22 +98,31 @@ export default function Hero() {
             <button
               type="button"
               className="cursor-pointer underline decoration-dotted decoration-neutral-400 underline-offset-4"
-              onMouseEnter={showLocationPreview}
-              onMouseLeave={hideLocationPreview}
-              onFocus={showLocationPreview}
-              onBlur={hideLocationPreview}
+              onMouseEnter={() => setHoveredPreview("location")}
+              onMouseLeave={() => setHoveredPreview(null)}
+              onFocus={(event) =>
+                setFocusedPreview(
+                  event.currentTarget.matches(":focus-visible")
+                    ? "location"
+                    : null,
+                )
+              }
+              onBlur={() => setFocusedPreview(null)}
             >
               Delhi
             </button>
 
             <span
-              ref={locationRef}
-              className="invisible pointer-events-none absolute bottom-full left-1/2 z-70 mb-1 w-36 -translate-x-1/2 p-2"
+              className={`pointer-events-none absolute bottom-full left-1/2 z-70 mb-1 w-36 -translate-x-1/2 p-2 transition-all duration-200 ease-out ${
+                isLocationPreviewOpen
+                  ? "visible translate-y-0 scale-100 opacity-100"
+                  : "invisible translate-y-2 scale-95 opacity-0"
+              }`}
             >
               <Image
                 src="/delhi.svg"
                 alt="Delhi"
-                width={66}
+                width={76}
                 height={76}
                 className="mx-auto"
               />
@@ -149,7 +131,7 @@ export default function Hero() {
         </p>
 
         <p className="mt-6 max-w-100 text-center text-xs leading-relaxed text-neutral-500 lg:text-sm 2xl:text-md">
-          I love building clean, modern websites where design,
+          I love building websites where design,
           functionality, and even the smallest details matter.
         </p>
       </div>
