@@ -7,13 +7,12 @@ import Navbar from "@/_components/ui/Navbar";
 export default function page() {
   return (
     <div className="flex justify-center items-center">
-      {/* <Navbar /> */}
+      <Navbar />
       <main className="w-full">
         <Hero />
         <Works />
-     <Footer />
+        <Footer />
       </main>
-      
     </div>
   );
 }

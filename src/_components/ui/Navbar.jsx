@@ -84,7 +84,7 @@ export default function Navbar() {
       className="fixed bottom-[max(20px,env(safe-area-inset-bottom))] left-1/2 z-50 flex -translate-x-1/2 items-center"
     >
       <div
-        className={`${surface} flex h-14.5 w-70 items-center justify-between rounded-2xl px-2.5`}
+        className={`${surface} flex h-14.5 w-50 items-center justify-between rounded-2xl px-2.5`}
       >
         {navigationItems.map(({ label, href, icon: Icon }) => (
           <Link
@@ -101,54 +101,7 @@ export default function Navbar() {
             <Icon className="nav-icon h-5.25 w-5.25" />
           </Link>
         ))}
-        <div
-          className="relative flex h-full items-center"
-          onMouseEnter={showSocials}
-          onMouseLeave={hideSocials}
-          onFocus={showSocials}
-          onBlur={(e) => {
-            if (!e.currentTarget.contains(e.relatedTarget)) {
-              hideSocials();
-            }
-          }}
-          onClick={(e)=> animateIcon(e, 1, 0.75)}
-        >
-          <button
-            type="button"
-            aria-label={contactItem.label}
-            aria-expanded={open}
-            className={buttonStyle}
-            onClick={() => (open ? hideSocials() : showSocials)}
-            onMouseEnter={(e) => animateIcon(e, 1.5, 1.4)}
-            onMouseLeave={(e) => animateIcon(e, 1, 1)}
-            onFocus={(e) => animateIcon(e, 1.15, 1.4)}
-            onBlur={(e) => animateIcon(e, 1, 0.75)}          
-          >
-            <contactItem.icon className="nav-icon h-5.25 w-5.25 cursor-pointer " />
-          </button>
-
-          <div
-            ref={socialRef}
-            aria-label="Social links"
-            className="invisible pointer-events-none absolute bottom-full left-1/2 z-50 flex -translate-x-1/2 items-center gap-2 pb-2"
-          >
-            {socialItems.map(({ label, href, icon: Icon }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                tabIndex={open ? 0 : -1}
-                className={`${surface} social-link grid h-8.25 w-8.25 shrink-0 place-items-center rounded-xl`}
-                onMouseEnter={(e) => animateIcon(e, 1.12, 1.4)}
-                onMouseLeave={(e) => animateIcon(e, 1, 1)}
-              >
-                <Icon className="nav-icon h-3.75 w-3.75" />
-              </a>
-            ))}
-          </div>
-        </div>
+       
       </div>
     </nav>
   );
