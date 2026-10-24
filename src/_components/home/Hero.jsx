@@ -3,10 +3,11 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Caveat } from "next/font/google";
+import { delhiPhotos } from "@/constants/about";
 
 const caveat = Caveat({
   subsets: ["latin"],
-  
+
   display: "swap",
 });
 
@@ -15,7 +16,6 @@ export default function Hero() {
   const [focusedPreview, setFocusedPreview] = useState(null);
   const [isImageOpen, setIsImageOpen] = useState(false);
   const activePreview = hoveredPreview ?? focusedPreview;
-  const isRolePreviewOpen = activePreview === "role";
   const isLocationPreviewOpen = activePreview === "location";
 
   return (
@@ -82,8 +82,6 @@ export default function Hero() {
             >
               Design Engineer
             </button>
-
-           
           </span>{" "}
           based in{" "}
           <span className="relative inline-block">
@@ -105,26 +103,42 @@ export default function Hero() {
             </button>
 
             <span
-              className={`pointer-events-none absolute bottom-full left-1/2 z-70 mb-1 w-36 -translate-x-1/2 p-2 transition-all duration-200 ease-out ${
+              className={`pointer-events-none absolute bottom-full left-1/10 z-70 mb-3 h-44 w-56 -translate-x-1/2 transition-all duration-200 ease-out ${
                 isLocationPreviewOpen
                   ? "visible translate-y-0 scale-100 opacity-100"
                   : "invisible translate-y-2 scale-95 opacity-0"
               }`}
             >
-              <Image
-                src="/delhi.svg"
-                alt="Delhi"
-                width={76}
-                height={76}
-                className="mx-auto"
-              />
+              {delhiPhotos.map((photo, index) => (
+                <span
+                  key={photo.src}
+                  className="absolute left-1/2 top-1/2 w-32 border-4 border-white bg-white p-1 shadow-lg"
+                  style={{
+                    zIndex: index,
+                    transform: `translate(
+          ${index === 0 ? "-48%" : "35%"},
+          -50%
+        ) rotate(${photo.rotation})`,
+                  }}
+                >
+                  <span className="relative block aspect-4/5 w-full overflow-hidden">
+                    <Image
+                      src={photo.src}
+                      alt={photo.alt}
+                      fill
+                      sizes="128px"
+                      className="object-cover"
+                    />
+                  </span>
+                </span>
+              ))}
             </span>
           </span>
         </p>
 
         <p className="mt-6 max-w-lg text-center text-xs leading-relaxed text-neutral-500 lg:text-sm 2xl:text-[16px]">
-          I love building websites where design,
-          functionality, and even the smallest details matter.
+          I love building websites where design, functionality, and even the
+          smallest details matter.
         </p>
       </div>
 

@@ -20,3 +20,16 @@ export const aboutPhotos = [
     rotation: "-3deg",
   },
 ];
+
+export const delhiPhotos = [
+  {
+    src: "/delhi.jpg",
+    alt: "Delhi",
+    rotation: "-8deg",
+  },
+  {
+    src: "/india-gate.jpg",
+    alt: "Delhi",
+    rotation: "7deg",
+  },
+];
