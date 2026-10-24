@@ -122,7 +122,7 @@ export default function Hero() {
           </span>
         </p>
 
-        <p className="mt-6 max-w-100 text-center text-xs leading-relaxed text-neutral-500 lg:text-sm 2xl:text-md">
+        <p className="mt-6 max-w-lg text-center text-xs leading-relaxed text-neutral-500 lg:text-sm 2xl:text-[16px]">
           I love building websites where design,
           functionality, and even the smallest details matter.
         </p>

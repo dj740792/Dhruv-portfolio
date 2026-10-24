@@ -3,6 +3,7 @@ import "lenis/dist/lenis.css";
 import {  Poppins, Caveat } from "next/font/google";
 import LenisProvider from "@/_components/ui/LenisProvider";
 import Navbar from "@/_components/ui/Navbar";
+import Footer from "@/_components/home/Footer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
         <LenisProvider>
           <Navbar />
           {children}
+          <Footer />
         </LenisProvider>
       </body>
     </html>

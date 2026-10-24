@@ -15,8 +15,7 @@ export default function Navbar() {
 
   const handleEnter = (ref) => {
     gsap.to(ref.current, {
-      scale: 1.08,
-      y: -3,
+      y: -2,
       duration: 0.25,
       ease: "power2.out",
     });
@@ -24,7 +23,6 @@ export default function Navbar() {
 
   const handleLeave = (ref) => {
     gsap.to(ref.current, {
-      scale: 1,
       y: 0,
       duration: 0.25,
       ease: "power2.out",
@@ -35,13 +33,13 @@ export default function Navbar() {
 
   return (
     <nav className="fixed bottom-5 left-1/2 z-50 -translate-x-1/2">
-      <div className="flex h-20 w-[calc(100vw-40px)] max-w-70 items-center justify-between rounded-2xl border border-white/50 bg-white/30 px-3 shadow-[0_8px_30px_rgba(0,0,0,0.12),inset_0_1px_1px_rgba(255,255,255,0.9)] backdrop-blur-xl backdrop-saturate-170 sm:px-8">
+      <div className="flex h-15 lg:h-18 w-[calc(100vw-40px)] max-w-60 lg:max-w-70 items-center justify-between rounded-2xl border border-white/50 bg-white/30 px-3 shadow-[0_8px_30px_rgba(0,0,0,0.12),inset_0_1px_1px_rgba(255,255,255,0.9)] backdrop-blur-xl backdrop-saturate-170 sm:px-8 lg:px-4 ">
         <Link
           href="/about"
           ref={profileRef}
           onMouseEnter={() => handleEnter(profileRef)}
           onMouseLeave={() => handleLeave(profileRef)}
-          className="relative h-13 w-13 overflow-hidden rounded-xl"
+          className="relative h-10 w-10 lg:h-13 lg:w-13 overflow-hidden rounded-lg lg:rounded-xl"
         >
           <Image
             src="/dhruv.jpg"
@@ -57,7 +55,7 @@ export default function Navbar() {
           ref={folderRef}
           onMouseEnter={() => handleEnter(folderRef)}
           onMouseLeave={() => handleLeave(folderRef)}
-          className="relative h-12 w-12"
+          className="relative h-10 w-10 lg:h-12 lg:w-12"
         >
           <Image
             src={isGalleryPage ? "/folder-open.png" : "/folder.png"}
@@ -73,7 +71,7 @@ export default function Navbar() {
           ref={contactRef}
           onMouseEnter={() => handleEnter(contactRef)}
           onMouseLeave={() => handleLeave(contactRef)}
-          className="relative h-12 w-12"
+          className="relative h-10 w-10 lg:h-12 lg:w-12"
         >
           <Image
             src="/send.jpg"
