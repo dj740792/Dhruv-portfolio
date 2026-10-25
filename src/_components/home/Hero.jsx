@@ -29,7 +29,7 @@ export default function Hero() {
 
       <div className="hero-banner relative mx-auto flex aspect-10/7 w-full overflow-hidden sm:aspect-auto sm:h-45 sm:w-100 xl:h-75 xl:w-150 lg:h-60 lg:w-130">
         <Image
-          src="/banner.gif"
+          src="/delhi.png"
           alt="Underwater landscape"
           fill
           priority

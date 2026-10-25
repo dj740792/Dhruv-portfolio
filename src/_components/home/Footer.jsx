@@ -37,7 +37,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="mx-auto w-full max-w-200 px-6 pb-8 pt-20 sm:px-10">
+    <footer id="footer" className="mx-auto w-full max-w-200 px-6 pb-8 pt-20 sm:px-10">
       <div className="flex flex-col gap-10 border-t border-dotted border-neutral-300 pt-8 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <h2 className="text-2xl font-medium tracking-tight text-neutral-900">

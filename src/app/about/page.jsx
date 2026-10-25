@@ -98,7 +98,7 @@ export default function About() {
           </div>
         </section>
 
-        <div className="mt-20 text-sm leading-relaxed text-neutral-500 sm:text-base">
+        <div className="mt-20 space-y-5 text-sm leading-relaxed text-neutral-500 sm:text-base">
           <p>
             Anyway, that's me for now. I'm still figuring things out, still
             building, and probably always will be.
