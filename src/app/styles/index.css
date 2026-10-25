@@ -62,7 +62,6 @@ body::-webkit-scrollbar {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-    color: #0101ff;
     font-size: 1.1em;
     white-space: nowrap;
     clip-path: inset(0 100% 0 0);

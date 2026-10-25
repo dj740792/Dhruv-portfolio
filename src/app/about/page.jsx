@@ -21,7 +21,7 @@ export default function About() {
             ⬅ Back{" "}
           </Link>
 
-          <div className="mt-9 space-y-7 text-sm leading-relaxed text-neutral-500 sm:text-base">
+          <div className="mt-9 space-y-5 text-sm leading-relaxed text-neutral-500 sm:text-base">
             <p>
               Hi, I'm{" "}
               <span className="underline decoration-dotted underline-offset-4">
@@ -52,7 +52,7 @@ export default function About() {
             Outside of all these , I'm probably somewhere out with friends or
             watching movies while having coffee or practicing my{" "}
             <span
-              className="japanese-greeting-trigger underline decoration-dotted underline-offset-4 cursor-pointer"
+              className="japanese-greeting-trigger underline decoration-dotted underline-offset-4 "
               tabIndex={0}
               aria-describedby="japanese-greeting-description"
             >
@@ -66,7 +66,7 @@ export default function About() {
             </span>
           </p>
 
-          <div className="relative mt-10 lg:mt-20 flex justify-center overflow-visible">
+          <div className="relative mt-10 lg:mt-10 flex justify-center overflow-visible">
             <div className="flex items-center gap-4">
               {aboutPhotos.map((photo) => (
                 <div
@@ -88,13 +88,22 @@ export default function About() {
                 </div>
               ))}
             </div>
-            {/* <Image
+            <Image
               src="/about.svg"
               alt=""
               width={150}
               height={80}
-              className="about-doodle absolute  z-10 hidden lg:block lg:-right-50 lg:-top-10"
-            /> */}
+              className="absolute  z-10 hidden lg:block lg:-right-50 lg:-top-10"
+            />
+          </div>
+        </section>
+        <section className="mt-20">
+          <div className="mt-20 text-sm leading-relaxed text-neutral-500 sm:text-base">
+            <p>
+              Anyway, that's me for now. I'm still figuring things out, still
+              building, and probably always will be.
+            </p>
+            <p>If you think we'd make a good fit, feel free to get in touch.</p>
           </div>
         </section>
       </main>

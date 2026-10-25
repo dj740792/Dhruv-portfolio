@@ -1,6 +1,6 @@
 export const aboutPhotos = [
   {
-    src: "/aboutImg1.jpg",
+    src: "/aboutImg4.jpg",
     alt: "With friends",
     rotation: "3deg",
   },
@@ -15,7 +15,7 @@ export const aboutPhotos = [
     rotation: "5deg",
   },
   {
-    src: "/aboutImg4.jpg",
+    src: "/aboutImg1.jpg",
     alt: "A photo of me",
     rotation: "-3deg",
   },
