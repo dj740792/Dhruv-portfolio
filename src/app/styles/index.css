@@ -34,3 +34,59 @@ body::-webkit-scrollbar {
 @utility flex-center {
     @apply flex justify-center items-center
 }
+
+@keyframes about-doodle-float {
+  0%, 100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(2deg);
+  }
+}
+
+.about-doodle {
+  animation: about-doodle-float 3s ease-in-out infinite;
+}
+
+.japanese-greeting-trigger {
+    position: relative;
+    display: inline-block;
+}
+
+.japanese-greeting {
+    position: absolute;
+    left: calc(100% + 0.5rem);
+    top: 50%;
+    width: 7.5rem;
+    transform: translateY(-50%);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    color: #0101ff;
+    font-size: 1.1em;
+    white-space: nowrap;
+    clip-path: inset(0 100% 0 0);
+}
+
+.japanese-greeting-trigger:hover .japanese-greeting,
+.japanese-greeting-trigger:focus-visible .japanese-greeting {
+    visibility: visible;
+    opacity: 1;
+    animation: japanese-greeting-write 900ms ease-out forwards;
+}
+
+@keyframes japanese-greeting-write {
+    to { clip-path: inset(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-doodle {
+    animation: none;
+  }
+
+  .japanese-greeting-trigger:hover .japanese-greeting,
+  .japanese-greeting-trigger:focus-visible .japanese-greeting {
+    animation: none;
+    clip-path: inset(0);
+  }
+}
