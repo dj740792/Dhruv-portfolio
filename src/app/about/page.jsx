@@ -1,13 +1,6 @@
 import Image from "next/image";
 import { aboutPhotos } from "@/constants/about";
 import Link from "next/link";
-import { Kiwi_Maru } from "next/font/google";
-
-const yujiMai = Kiwi_Maru({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export default function About() {
   return (
@@ -50,24 +43,16 @@ export default function About() {
         <section className="mt-20">
           <p className="max-w-150 text-sm leading-relaxed text-neutral-500 sm:text-base">
             Outside of all these , I'm probably somewhere out with friends or
-            watching movies while having coffee or practicing my{" "}
-            <span
-              className="japanese-greeting-trigger underline decoration-dotted underline-offset-4 "
-              tabIndex={0}
-              aria-describedby="japanese-greeting-description"
-            >
-              japanese
-              <span
-                className={`${yujiMai.className} japanese-greeting`}
-                aria-hidden="true"
-              >
-                こんにちは
-              </span>
-            </span>
+            watching movies while having coffee.
           </p>
 
-          <div className="relative mt-10 lg:mt-10 flex justify-center overflow-visible">
-            <div className="flex items-center gap-4">
+          <div className="about-photo-scroll relative -mx-6 mt-10 overflow-x-auto px-6 py-3 sm:-mx-10 sm:px-10 lg:mx-0 lg:overflow-visible lg:px-0 lg:py-0">
+            <div
+              role="region"
+              aria-label="Photo carousel"
+              tabIndex={0}
+              className="flex w-max items-center gap-4 focus-visible:outline focus-visible:outline-neutral-400 lg:mx-auto"
+            >
               {aboutPhotos.map((photo) => (
                 <div
                   key={photo.src}

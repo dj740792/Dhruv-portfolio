@@ -48,44 +48,11 @@ body::-webkit-scrollbar {
   animation: about-doodle-float 3s ease-in-out infinite;
 }
 
-.japanese-greeting-trigger {
-    position: relative;
-    display: inline-block;
+.about-photo-scroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-.japanese-greeting {
-    position: absolute;
-    left: calc(100% + 0.5rem);
-    top: 50%;
-    width: 7.5rem;
-    transform: translateY(-50%);
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-    font-size: 1.1em;
-    white-space: nowrap;
-    clip-path: inset(0 100% 0 0);
-}
-
-.japanese-greeting-trigger:hover .japanese-greeting,
-.japanese-greeting-trigger:focus-visible .japanese-greeting {
-    visibility: visible;
-    opacity: 1;
-    animation: japanese-greeting-write 900ms ease-out forwards;
-}
-
-@keyframes japanese-greeting-write {
-    to { clip-path: inset(0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .about-doodle {
-    animation: none;
-  }
-
-  .japanese-greeting-trigger:hover .japanese-greeting,
-  .japanese-greeting-trigger:focus-visible .japanese-greeting {
-    animation: none;
-    clip-path: inset(0);
-  }
+.about-photo-scroll::-webkit-scrollbar {
+    display: none;
 }
