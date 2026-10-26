@@ -29,9 +29,10 @@ export default function Hero() {
 
       <div className="hero-banner relative mx-auto flex aspect-10/7 w-full overflow-hidden sm:aspect-auto sm:h-45 sm:w-100 xl:h-75 xl:w-150 lg:h-60 lg:w-130">
         <Image
-          src="/delhi.png"
+          src="/banner.gif"
           alt="Underwater landscape"
           fill
+          unoptimized
           priority
           sizes="(max-width: 768px) 100vw, 1200px"
           className="object-cover"
@@ -60,7 +61,7 @@ export default function Hero() {
             Hey I'm,
           </span>
 
-          <h1 className={`${caveat.className} text-6xl xl:text-7xl`}>
+          <h1 className={`${caveat.className} text-5xl`}>
             Dhruv Jha
           </h1>
         </div>
@@ -112,7 +113,7 @@ export default function Hero() {
               {delhiPhotos.map((photo, index) => (
                 <span
                   key={photo.src}
-                  className="absolute left-1/2 top-1/2 w-32 border-4 border-white bg-white p-1 shadow-lg"
+                  className="absolute left-1/2 top-1/2 w-32 border border-white bg-white p-1 shadow-lg"
                   style={{
                     zIndex: index,
                     transform: `translate(
@@ -148,7 +149,7 @@ export default function Hero() {
           onClick={() => setIsImageOpen(false)}
         >
           <div
-            className="relative h-[80vh] w-full max-w-3xl"
+            className="relative h-[80vh] w-full max-w-3xl "
             onClick={(event) => event.stopPropagation()}
           >
             <Image
