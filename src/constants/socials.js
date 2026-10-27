@@ -19,7 +19,7 @@ export const socials = [
   },
   {
     name: "Resume",
-    href: "https://www.linkedin.com/in/dhruv-jha-7a1a4441b/",
+    href: "/resume.pdf",
     icon: SiReaddotcv,
   },
 ];
