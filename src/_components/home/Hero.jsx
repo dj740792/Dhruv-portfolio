@@ -35,7 +35,7 @@ export default function Hero() {
         <button
           type="button"
           onClick={() => setIsImageOpen(true)}
-          className="relative h-22 w-22 cursor-pointer overflow-hidden rounded-xl"
+          className="relative h-18 w-18 xl:h-22 xl:w-22 cursor-pointer overflow-hidden rounded-xl"
           aria-label="View profile picture"
         >
           <Image
@@ -63,7 +63,7 @@ export default function Hero() {
           <span className="relative inline-block">
             <button
               type="button"
-              className="cursor-pointer underline decoration-dotted decoration-neutral-400 underline-offset-4"
+              className="underline decoration-dotted decoration-neutral-400 underline-offset-4"
               onMouseEnter={() => setHoveredPreview("role")}
               onMouseLeave={() => setHoveredPreview(null)}
               onFocus={(event) =>
@@ -129,9 +129,13 @@ export default function Hero() {
           </span>
         </p>
 
-        <p className="mt-6 max-w-lg text-center text-xs leading-relaxed text-neutral-500 lg:text-sm 2xl:text-[16px]">
+        <p className="mt-6 max-w-md text-center text-xs leading-relaxed text-neutral-500 lg:text-sm 2xl:text-[16px]">
           I love building websites where design, functionality, and even the
           smallest details matter.
+        </p>
+        <p className="mt-6 max-w-lg text-center text-xs leading-relaxed text-neutral-500 lg:text-sm 2xl:text-[16px]">
+          Currently working with Next js, Tailwind, Gsap or motion.
+         
         </p>
       </div>
 

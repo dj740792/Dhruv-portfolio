@@ -90,7 +90,7 @@ function mountOcean(canvas) {
       const wx = (vn(x * fx + t1, y * fy + 3, 1024, 11) - .5) * A + (vn(x * fx * 3 + 5 - t1 * 1.7, y * fy * 3 + t2 * 1.3 + 1, 1024, 41) - .5) * A * .45;
       const wy = (vn(x * fx + 7, y * fy - t2, 1024, 23) - .5) * A + (vn(x * fx * 3 - t2 * 1.5, y * fy * 3 + 9 + t1 * 1.2, 1024, 53) - .5) * A * .45;
       const ex = x + wx - W / 2, ey = y + wy - H / 2, nx = ex / a, ny = ey / b, n2 = nx * nx, m2 = ny * ny;
-      const n4 = n2 * n2, m4 = m2 * m2, d = Math.pow(n4 * n4 + m4 * m4, .125) + (vn(x * fx * 6 - t1 * 2, y * fy * 6 + t2 * 2, 1024, 31) - .5) * .012;
+      const n4 = n2 * n2, m4 = m2 * m2, n8 = n4 * n4, m8 = m4 * m4, d = Math.pow(n8 * n8 + m8 * m8, .0625) + (vn(x * fx * 6 - t1 * 2, y * fy * 6 + t2 * 2, 1024, 31) - .5) * .012;
       const dpx = Math.hypot(ex, ey) * (1 - d) / Math.max(d, .2);   // approx. distance to the edge in px
       const al = clamp(dpx / feather, 0, 1), r = clamp(dpx / rimW, 0, 1), q = (j * mw + i) * 4 + 3;
       px[q] = al * al * (3 - 2 * al) * 255;
