@@ -31,7 +31,7 @@ export default function Hero() {
       <OceanBanner  /> 
            </div>
 
-      <div className="flex flex-col items-center pt-14 sm:pt-16">
+      <div className="flex flex-col items-center pt-10 ">
         <button
           type="button"
           onClick={() => setIsImageOpen(true)}
@@ -129,14 +129,10 @@ export default function Hero() {
           </span>
         </p>
 
-        <p className="mt-6 max-w-md text-center text-xs leading-relaxed text-neutral-500 lg:text-sm 2xl:text-[16px]">
-          I love building websites where design, functionality, and even the
-          smallest details matter.
+        <p className="mt-6 max-w-2xl text-center text-xs leading-relaxed text-neutral-500 lg:text-sm 2xl:text-[16px]">
+          I use Next Js, Tailwind, Motion or Gsap to design and develop modern websites where design, functionality, and even the smallest details matter.
         </p>
-        <p className="mt-6 max-w-lg text-center text-xs leading-relaxed text-neutral-500 lg:text-sm 2xl:text-[16px]">
-          Currently working with Next js, Tailwind, Gsap or motion.
-         
-        </p>
+    
       </div>
 
       {isImageOpen && (

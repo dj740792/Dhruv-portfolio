@@ -31,7 +31,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed bottom-5 left-1/2 z-50 -translate-x-1/2">
-      <div className="flex h-15 lg:h-18 w-[calc(100vw-40px)] max-w-35 lg:max-w-45 items-center justify-between rounded-2xl border border-white/50 bg-white/30 px-3 shadow-[0_8px_30px_rgba(0,0,0,0.12),inset_0_1px_1px_rgba(255,255,255,0.9)] backdrop-blur-xl backdrop-saturate-170 sm:px-8 lg:px-4 ">
+      <div className="flex h-15  lg:h-18 w-[calc(100vw-40px)] max-w-35 lg:max-w-45 items-center justify-between rounded-2xl border border-white/50 bg-white/30 px-3 shadow-[0_8px_30px_rgba(0,0,0,0.12),inset_0_1px_1px_rgba(255,255,255,0.9)]  backdrop-blur-xl backdrop-saturate-170 sm:px-8 md:px-4 ">
         <Link
           href="/about"
           ref={profileRef}

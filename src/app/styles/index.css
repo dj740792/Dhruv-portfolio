@@ -37,6 +37,34 @@ body::-webkit-scrollbar {
   animation: about-doodle-float 3s ease-in-out infinite;
 }
 
+.about-name-wave-trigger {
+    display: inline-flex;
+    align-items: center;
+}
+
+.about-name-wave {
+    display: inline-block;
+    width: 0;
+    margin-left: 0.2em;
+    overflow: hidden;
+    opacity: 0;
+    transform-origin: 80% 80%;
+    transition: width 180ms ease-out, opacity 180ms ease-out;
+    vertical-align: -0.1em;
+}
+
+.about-name-wave-trigger:hover .about-name-wave {
+    width: 1.2em;
+    opacity: 1;
+    animation: about-name-wave 700ms ease-in-out infinite;
+}
+
+@keyframes about-name-wave {
+    0%, 100% { transform: rotate(0deg); }
+    20%, 60% { transform: rotate(18deg); }
+    40%, 80% { transform: rotate(-8deg); }
+}
+
 .japanese-greeting-trigger {
     position: relative;
     display: inline-block;
@@ -77,6 +105,10 @@ body::-webkit-scrollbar {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .about-name-wave-trigger:hover .about-name-wave {
+    animation: none;
+  }
+
   .japanese-greeting-trigger:hover .japanese-greeting,
   .japanese-greeting-trigger:focus-visible .japanese-greeting {
     animation: none;

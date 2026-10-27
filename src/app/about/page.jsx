@@ -24,10 +24,21 @@ export default function About() {
           <div className="mt-9 space-y-5 text-sm leading-relaxed text-neutral-500 sm:text-base">
             <p>
               Hi, I'm{" "}
-              <span className="underline decoration-dotted underline-offset-4">
-                Dhruv
+              <span className="about-name-wave-trigger">
+                <span className="cursor-pointer underline decoration-dotted underline-offset-4">
+                  Dhruv.
+                </span>
+                <span className="about-name-wave" aria-hidden="true">
+                  <Image
+                    src="/hi.svg"
+                    alt=""
+                    width={28}
+                    height={28}
+                    className="h-[1em] w-[1em] shrink-0 object-contain"
+                  />
+                </span>
               </span>
-              . I spend a probably unhealthy amount of time staring at websites
+               <br />I spend a probably unhealthy amount of time staring at websites
               and thinking, “how did they make that?”
             </p>
 
