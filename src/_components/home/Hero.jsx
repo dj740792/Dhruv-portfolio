@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Caveat } from "next/font/google";
 import { delhiPhotos } from "@/constants/about";
-
+import OceanBanner from "../ui/OceanBanner";
 const caveat = Caveat({
   subsets: ["latin"],
 
@@ -27,17 +27,9 @@ export default function Hero() {
         }`}
       />
 
-      <div className="hero-banner relative mx-auto flex aspect-10/7 w-full overflow-hidden sm:aspect-auto sm:h-45 sm:w-100 xl:h-75 xl:w-150 lg:h-60 lg:w-130">
-        <Image
-          src="/banner.gif"
-          alt="Underwater landscape"
-          fill
-          unoptimized
-          priority
-          sizes="(max-width: 768px) 100vw, 1200px"
-          className="object-cover"
-        />
-      </div>
+      <div className="relative mx-auto flex aspect-10/7 w-full overflow-hidden sm:aspect-auto sm:h-45 sm:w-130 md:h-70  xl:h-85 xl:w-160 lg:h-60 lg:w-130">
+      <OceanBanner  /> 
+           </div>
 
       <div className="flex flex-col items-center pt-14 sm:pt-16">
         <button

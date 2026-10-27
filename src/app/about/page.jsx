@@ -1,6 +1,13 @@
 import Image from "next/image";
 import { aboutPhotos } from "@/constants/about";
 import Link from "next/link";
+import { Kiwi_Maru } from "next/font/google";
+
+const yujiMai = Kiwi_Maru({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function About() {
   return (
@@ -40,10 +47,22 @@ export default function About() {
           </div>
         </section>
 
-        <section className="mt-20">
+        <section className="mt-14 lg:mt-20">
           <p className="max-w-150 text-sm leading-relaxed text-neutral-500 sm:text-base">
             Outside of all these , I'm probably somewhere out with friends or
-            watching movies while having coffee.
+            watching movies while having coffee or practicing my{" "}
+            <span
+              className="japanese-greeting-trigger underline decoration-dotted underline-offset-4"
+              tabIndex={0}
+            >
+              japanese
+              <span
+                className={`${yujiMai.className} japanese-greeting hidden lg:block`}
+                aria-hidden="true"
+              >
+                こんにちは
+              </span>
+            </span>
           </p>
 
           <div className="about-photo-scroll relative -mx-6 mt-10 overflow-x-auto px-6 py-3 sm:-mx-10 sm:px-10 lg:mx-0 lg:overflow-visible lg:px-0 lg:py-0">
