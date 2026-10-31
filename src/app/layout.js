@@ -17,10 +17,52 @@ const caveat = Caveat({
   display:"swap"
 });
 
-
 export const metadata = {
-  title: "Dhruv Jha",
-  description: "Dhruv's personal corner on the web",
+  metadataBase: new URL("https://dhruv-portfolio-lac.vercel.app"),
+
+  title: {
+    default: "Dhruv Jha",
+    template: "%s — Dhruv Jha",
+  },
+
+  description:
+    "Portfolio of Dhruv Jha, a frontend developer building clean, responsive, and interactive web experiences.",
+
+  keywords: [
+    "Dhruv Jha",
+    "Frontend Developer",
+    "Web Developer",
+    "Next.js Developer",
+    "React Developer",
+    "Portfolio",
+    "Design Engineer",
+    "Web Designer"
+  ],
+
+  authors: [{ name: "Dhruv Jha" }],
+  creator: "Dhruv Jha",
+
+  openGraph: {
+    title: "Dhruv Jha — Frontend Developer",
+    description:
+      "Portfolio of Dhruv Jha, a frontend developer building clean, responsive, and interactive web experiences.",
+    url: "https://dhruv-portfolio-lac.vercel.app",
+    siteName: "Dhruv Jha",
+    type: "website",
+    locale: "en_US",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Dhruv Jha — Frontend Developer",
+    description:
+      "Portfolio of Dhruv Jha, a frontend developer building clean, responsive, and interactive web experiences.",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }) {
